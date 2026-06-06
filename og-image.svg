@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="100%" stop-color="#0d2137"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- depth grid lines -->
+    <pattern id="grid" x="0" y="0" width="1200" height="60" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="59" x2="1200" y2="59" stroke="#00d4ff" stroke-width="0.4" stroke-opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Logo mark -->
+  <g transform="translate(96, 96)">
+    <circle cx="28" cy="28" r="27" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M14 36 Q19 14 24 22 Q29 30 34 16" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <circle cx="24" cy="22" r="3" fill="#00d4ff"/>
+  </g>
+
+  <!-- App name -->
+  <text x="96" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="700" fill="#e8f0f8" letter-spacing="-2">PlannerX</text>
+
+  <!-- Tagline -->
+  <text x="96" y="270" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="400" fill="#7a98b8">Technical Dive Planner</text>
+
+  <!-- Divider -->
+  <line x1="96" y1="306" x2="460" y2="306" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- Badges -->
+  <g transform="translate(96, 330)">
+    <!-- Badge 1 -->
+    <rect width="200" height="40" rx="20" fill="#00d4ff" fill-opacity="0.1" stroke="#00d4ff" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="100" y="25" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#00d4ff" text-anchor="middle">Bühlmann ZHL-16C</text>
+    <!-- Badge 2 -->
+    <rect x="216" width="120" height="40" rx="20" fill="#00d4ff" fill-opacity="0.1" stroke="#00d4ff" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="276" y="25" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#00d4ff" text-anchor="middle">VPM-B</text>
+    <!-- Badge 3 -->
+    <rect x="352" width="100" height="40" rx="20" fill="#00d4ff" fill-opacity="0.1" stroke="#00d4ff" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="402" y="25" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#00d4ff" text-anchor="middle">CCR</text>
+    <!-- Badge 4 -->
+    <rect x="468" width="160" height="40" rx="20" fill="#00d4ff" fill-opacity="0.1" stroke="#00d4ff" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="548" y="25" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#00d4ff" text-anchor="middle">Offline-first</text>
+  </g>
+
+  <!-- Profile chart illustration (right side) -->
+  <g transform="translate(700, 80)" opacity="0.35">
+    <!-- Chart area -->
+    <rect width="400" height="440" rx="12" fill="#0f2238" stroke="#00d4ff" stroke-width="1" stroke-opacity="0.15"/>
+    <!-- Depth axis -->
+    <line x1="48" y1="20" x2="48" y2="400" stroke="#3d5a78" stroke-width="1"/>
+    <!-- Time axis -->
+    <line x1="48" y1="400" x2="380" y2="400" stroke="#3d5a78" stroke-width="1"/>
+    <!-- Depth labels -->
+    <text x="40" y="80"  font-family="monospace" font-size="11" fill="#3d5a78" text-anchor="end">20m</text>
+    <text x="40" y="160" font-family="monospace" font-size="11" fill="#3d5a78" text-anchor="end">40m</text>
+    <text x="40" y="240" font-family="monospace" font-size="11" fill="#3d5a78" text-anchor="end">60m</text>
+    <!-- Gradient fill under profile -->
+    <defs>
+      <linearGradient id="profileFill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#00d4ff" stop-opacity="0.03"/>
+      </linearGradient>
+    </defs>
+    <polygon points="48,400 68,400 88,280 128,280 148,220 168,220 188,180 228,180 248,140 268,140 308,100 348,100 368,60 388,60 388,400" fill="url(#profileFill)"/>
+    <!-- Profile line -->
+    <polyline points="48,400 68,400 88,280 128,280 148,220 168,220 188,180 228,180 248,140 268,140 308,100 348,100 368,60 388,60" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Deco stop lines -->
+    <line x1="68" y1="360" x2="88" y2="360" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.5"/>
+    <line x1="68" y1="320" x2="128" y2="320" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.5"/>
+    <line x1="68" y1="280" x2="148" y2="280" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.5"/>
+    <!-- Ceiling dashed line -->
+    <polyline points="68,380 88,340 128,300 168,270 228,230 268,190 308,150 348,110 368,70 388,70" fill="none" stroke="#00a8cc" stroke-width="1.5" stroke-dasharray="4,4" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- Domain -->
+  <text x="96" y="560" font-family="system-ui,-apple-system,sans-serif" font-size="22" font-weight="400" fill="#3d5a78">plannerx.garzuu.com</text>
+</svg>
