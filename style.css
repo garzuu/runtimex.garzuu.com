@@ -80,6 +80,25 @@ body {
 
 .btn-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
+/* ── Language toggle ──────────────────────────────────────────── */
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--border-card);
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ── Nav ──────────────────────────────────────────────────────── */
 .nav {
   position: fixed;

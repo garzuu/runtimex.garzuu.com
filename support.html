@@ -41,10 +41,11 @@
         RuntimeX
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#features">Features</a></li>
-        <li><a href="index.html#algorithms">Algorithms</a></li>
-        <li><a href="index.html#platforms">Platforms</a></li>
-        <li><a href="index.html#download" class="btn btn-sm">Download</a></li>
+        <li><a href="index.html#features"   data-i18n="nav.features">Features</a></li>
+        <li><a href="index.html#algorithms" data-i18n="nav.algorithms">Algorithms</a></li>
+        <li><a href="index.html#platforms"  data-i18n="nav.platforms">Platforms</a></li>
+        <li><a href="download.html" class="btn btn-sm" data-i18n="nav.download">Download</a></li>
+        <li><button id="lang-toggle" class="lang-toggle">IT</button></li>
       </ul>
     </div>
   </nav>
@@ -162,5 +163,6 @@
   </footer>
 
   <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+  <script src="i18n.js"></script>
 </body>
 </html>

@@ -6,10 +6,8 @@
   <title>RuntimeX — Technical Dive Planner</title>
   <meta name="description" content="Offline-first technical dive planning app. Bühlmann ZHL-16C, VPM-B, CCR support, PDF export. No account required." />
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://runtimex.garzuu.com/" />
 
-  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://runtimex.garzuu.com/" />
   <meta property="og:title"       content="RuntimeX — Technical Dive Planner" />
@@ -20,18 +18,13 @@
   <meta property="og:locale"      content="en_US" />
   <meta property="og:site_name"   content="RuntimeX" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="RuntimeX — Technical Dive Planner" />
   <meta name="twitter:description" content="Offline-first technical dive planning app. Bühlmann ZHL-16C, VPM-B, CCR support, PDF export. No account required." />
   <meta name="twitter:image"       content="https://runtimex.garzuu.com/og-image.svg" />
 
-  <!-- iOS Smart App Banner — fill in content="app-id=YOUR_APP_ID" once live on the App Store -->
-  <!-- <meta name="apple-itunes-app" content="app-id=XXXXXXXXXX" /> -->
-
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,10 +40,11 @@
         RuntimeX
       </a>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#algorithms">Algorithms</a></li>
-        <li><a href="#platforms">Platforms</a></li>
-        <li><a href="download.html" class="btn btn-sm">Download</a></li>
+        <li><a href="#features"    data-i18n="nav.features">Features</a></li>
+        <li><a href="#algorithms"  data-i18n="nav.algorithms">Algorithms</a></li>
+        <li><a href="#platforms"   data-i18n="nav.platforms">Platforms</a></li>
+        <li><a href="download.html" class="btn btn-sm" data-i18n="nav.download">Download</a></li>
+        <li><button id="lang-toggle" class="lang-toggle">IT</button></li>
       </ul>
     </div>
   </nav>
@@ -59,35 +53,35 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-inner">
-      <h1 class="hero-title">Plan your dive,<br><span class="accent">dive the plan.</span></h1>
-      <p class="hero-sub">
+      <h1 class="hero-title" data-i18n-html="hero.title">Plan your dive,<br><span class="accent">dive the plan.</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">
         RuntimeX is a technical dive planning app built for precision.
         Bühlmann ZHL-16C and VPM-B engines, CCR support, multi-gas decompression,
         PDF export — everything runs on your device.
       </p>
       <div class="hero-actions">
-        <a href="download.html" class="btn btn-primary">Get the App</a>
-        <a href="#features" class="btn btn-ghost">See Features</a>
+        <a href="download.html" class="btn btn-primary" data-i18n="hero.cta.app">Get the App</a>
+        <a href="#features"     class="btn btn-ghost"   data-i18n="hero.cta.features">See Features</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-value">2</span>
-          <span class="stat-label">Deco Algorithms</span>
+          <span class="stat-label" data-i18n="hero.stat.algos">Deco Algorithms</span>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
           <span class="stat-value">∞</span>
-          <span class="stat-label">Gas Mixes</span>
+          <span class="stat-label" data-i18n="hero.stat.gases">Gas Mixes</span>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
           <span class="stat-value">2</span>
-          <span class="stat-label">Platforms</span>
+          <span class="stat-label" data-i18n="hero.stat.platforms">Platforms</span>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
           <span class="stat-value">0</span>
-          <span class="stat-label">Accounts Needed</span>
+          <span class="stat-label" data-i18n="hero.stat.accounts">Accounts Needed</span>
         </div>
       </div>
     </div>
@@ -102,8 +96,8 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-header">
-        <h2>Everything you need in the water</h2>
-        <p>Designed for technical divers who demand accuracy without complexity.</p>
+        <h2 data-i18n="features.title">Everything you need in the water</h2>
+        <p data-i18n="features.sub">Designed for technical divers who demand accuracy without complexity.</p>
       </div>
       <div class="features-grid">
 
@@ -114,13 +108,13 @@
               <line x1="3" y1="19" x2="21" y2="19" stroke-width="1"/>
             </svg>
           </div>
-          <h3>Decompression Engine</h3>
-          <p>Full Bühlmann ZHL-16C implementation with configurable gradient factors (GF Low / GF High). VPM-B conservatism slider from 0 to 5. NDL calculation, lost-gas scenarios, and SAC-based gas consumption for every phase of your dive.</p>
+          <h3 data-i18n="feat.deco.title">Decompression Engine</h3>
+          <p data-i18n="feat.deco.desc">Full Bühlmann ZHL-16C implementation with configurable gradient factors (GF Low / GF High). VPM-B conservatism slider from 0 to 5. NDL calculation, lost-gas scenarios, and SAC-based gas consumption for every phase of your dive.</p>
           <ul class="feature-list">
-            <li>Gradient factors (GF Low / GF High)</li>
-            <li>NDL &amp; ceiling tracking</li>
-            <li>Lost-gas worst-case scenarios</li>
-            <li>SAC bottom &amp; deco consumption</li>
+            <li data-i18n="feat.deco.li1">Gradient factors (GF Low / GF High)</li>
+            <li data-i18n="feat.deco.li2">NDL &amp; ceiling tracking</li>
+            <li data-i18n="feat.deco.li3">Lost-gas worst-case scenarios</li>
+            <li data-i18n="feat.deco.li4">SAC bottom &amp; deco consumption</li>
           </ul>
         </div>
 
@@ -131,8 +125,8 @@
               <path d="M12 7v5l3 3"/>
             </svg>
           </div>
-          <h3>CCR Support</h3>
-          <p>Closed-Circuit Rebreather mode with constant-ppO2 loop gas, configurable low/high setpoint, diluent mix, and full bailout scenario planning.</p>
+          <h3 data-i18n="feat.ccr.title">CCR Support</h3>
+          <p data-i18n="feat.ccr.desc">Closed-Circuit Rebreather mode with constant-ppO2 loop gas, configurable low/high setpoint, diluent mix, and full bailout scenario planning.</p>
         </div>
 
         <div class="feature-card">
@@ -142,8 +136,8 @@
               <path d="M3 9h18M9 21V9"/>
             </svg>
           </div>
-          <h3>Multi-Gas Planning</h3>
-          <p>Bottom gas plus unlimited deco and travel gases, each with per-gas ppO2 limits. Switch gases automatically at optimal depths.</p>
+          <h3 data-i18n="feat.gas.title">Multi-Gas Planning</h3>
+          <p data-i18n="feat.gas.desc">Bottom gas plus unlimited deco and travel gases, each with per-gas ppO2 limits. Switch gases automatically at optimal depths.</p>
         </div>
 
         <div class="feature-card">
@@ -152,8 +146,8 @@
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
           </div>
-          <h3>Interactive Profile Chart</h3>
-          <p>Depth/time profile with gradient fill. Tap to toggle: dashed ceiling line showing decompression obligation over time, plus a live stats panel (TTS, Runtime, NDL, stop count).</p>
+          <h3 data-i18n="feat.chart.title">Interactive Profile Chart</h3>
+          <p data-i18n="feat.chart.desc">Depth/time profile with gradient fill. Tap to toggle: dashed ceiling line showing decompression obligation over time, plus a live stats panel (TTS, Runtime, NDL, stop count).</p>
         </div>
 
         <div class="feature-card">
@@ -166,8 +160,8 @@
               <polyline points="10 9 9 9 8 9"/>
             </svg>
           </div>
-          <h3>PDF Export</h3>
-          <p>Full-page report with key metrics, dive parameters, gas inventory, profile chart, deco schedule, gas consumption, and lost-gas scenarios. Share or print via system share sheet.</p>
+          <h3 data-i18n="feat.pdf.title">PDF Export</h3>
+          <p data-i18n="feat.pdf.desc">Full-page report with key metrics, dive parameters, gas inventory, profile chart, deco schedule, gas consumption, and lost-gas scenarios. Share or print via system share sheet.</p>
         </div>
 
         <div class="feature-card">
@@ -178,8 +172,8 @@
               <polyline points="7 3 7 8 15 8"/>
             </svg>
           </div>
-          <h3>Saved Plans</h3>
-          <p>Name and save any generated plan. Sidebar with plan list showing depth, time, gas, TTS, and stop count. Load or delete with confirmation anytime.</p>
+          <h3 data-i18n="feat.save.title">Saved Plans</h3>
+          <p data-i18n="feat.save.desc">Name and save any generated plan. Sidebar with plan list showing depth, time, gas, TTS, and stop count. Load or delete with confirmation anytime.</p>
         </div>
 
       </div>
@@ -190,8 +184,8 @@
   <section class="section section--dark" id="algorithms">
     <div class="container">
       <div class="section-header">
-        <h2>Two proven algorithms.<br>One app.</h2>
-        <p>Choose the model that matches your training and diving style.</p>
+        <h2 data-i18n-html="algo.title">Two proven algorithms.<br>One app.</h2>
+        <p data-i18n="algo.sub">Choose the model that matches your training and diving style.</p>
       </div>
       <div class="algo-grid">
         <div class="algo-card">
@@ -199,21 +193,17 @@
             <span class="algo-tag">ZH-L16C</span>
             <h3>Bühlmann</h3>
           </div>
-          <p class="algo-desc">The industry standard for dissolved-gas decompression modelling. Fine-tune conservatism with gradient factors — GF Low controls first stop depth, GF High controls surfacing ceiling.</p>
+          <p class="algo-desc" data-i18n="algo.buhl.desc">The industry standard for dissolved-gas decompression modelling. Fine-tune conservatism with gradient factors — GF Low controls first stop depth, GF High controls surfacing ceiling.</p>
           <div class="algo-params">
             <div class="param">
               <span class="param-name">GF Low</span>
-              <div class="param-bar">
-                <div class="param-fill" style="--fill: 30%"></div>
-              </div>
-              <span class="param-hint">First stop depth</span>
+              <div class="param-bar"><div class="param-fill" style="--fill: 30%"></div></div>
+              <span class="param-hint" data-i18n="algo.buhl.hint1">First stop depth</span>
             </div>
             <div class="param">
               <span class="param-name">GF High</span>
-              <div class="param-bar">
-                <div class="param-fill" style="--fill: 85%"></div>
-              </div>
-              <span class="param-hint">Surfacing ceiling</span>
+              <div class="param-bar"><div class="param-fill" style="--fill: 85%"></div></div>
+              <span class="param-hint" data-i18n="algo.buhl.hint2">Surfacing ceiling</span>
             </div>
           </div>
         </div>
@@ -222,14 +212,12 @@
             <span class="algo-tag">VPM-B</span>
             <h3>Varying Permeability Model</h3>
           </div>
-          <p class="algo-desc">Bubble-based model that accounts for nucleation of microbubbles. Adjust conservatism on a simple 0–5 slider — no deep knowledge of model internals required.</p>
+          <p class="algo-desc" data-i18n="algo.vpm.desc">Bubble-based model that accounts for nucleation of microbubbles. Adjust conservatism on a simple 0–5 slider — no deep knowledge of model internals required.</p>
           <div class="algo-params">
             <div class="param">
               <span class="param-name">Conservatism</span>
-              <div class="param-bar">
-                <div class="param-fill" style="--fill: 60%"></div>
-              </div>
-              <span class="param-hint">0 (aggressive) → 5 (conservative)</span>
+              <div class="param-bar"><div class="param-fill" style="--fill: 60%"></div></div>
+              <span class="param-hint" data-i18n="algo.vpm.hint">0 (aggressive) → 5 (conservative)</span>
             </div>
           </div>
         </div>
@@ -241,8 +229,8 @@
   <section class="section" id="platforms">
     <div class="container">
       <div class="section-header">
-        <h2>iOS &amp; Android.</h2>
-        <p>Plan from your phone at the dive site. Works on any device, fully offline.</p>
+        <h2 data-i18n="platforms.title">iOS &amp; Android.</h2>
+        <p data-i18n="platforms.sub">Plan from your phone at the dive site. Works on any device, fully offline.</p>
       </div>
       <div class="platforms-grid platforms-grid--two">
         <div class="platform-card">
@@ -275,8 +263,8 @@
         </svg>
       </div>
       <div class="offline-text">
-        <h3>100% Offline. Always.</h3>
-        <p>No Wi-Fi at the dive site? No problem. RuntimeX requires zero network connection — plans are computed and saved entirely on your device. Your data never leaves your hands.</p>
+        <h3 data-i18n="offline.title">100% Offline. Always.</h3>
+        <p data-i18n="offline.desc">No Wi-Fi at the dive site? No problem. RuntimeX requires zero network connection — plans are computed and saved entirely on your device. Your data never leaves your hands.</p>
       </div>
     </div>
   </section>
@@ -285,56 +273,32 @@
   <section class="section" id="settings">
     <div class="container">
       <div class="section-header">
-        <h2>Configured your way</h2>
-        <p>Set persistent defaults once. Override per dive whenever you need to.</p>
+        <h2 data-i18n="settings.title">Configured your way</h2>
+        <p data-i18n="settings.sub">Set persistent defaults once. Override per dive whenever you need to.</p>
       </div>
       <div class="settings-grid">
-        <div class="setting-item">
-          <span class="setting-key">Algorithm</span>
-          <span class="setting-val">Bühlmann / VPM-B</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">GF Low / GF High</span>
-          <span class="setting-val">30 / 85 (default)</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">VPM Conservatism</span>
-          <span class="setting-val">0 – 5</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">SAC Bottom</span>
-          <span class="setting-val">L/min</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">SAC Deco</span>
-          <span class="setting-val">L/min</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">Ascent Rate</span>
-          <span class="setting-val">m/min</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">Descent Rate</span>
-          <span class="setting-val">m/min</span>
-        </div>
-        <div class="setting-item">
-          <span class="setting-key">CCR Setpoints</span>
-          <span class="setting-val">Low / High ppO2</span>
-        </div>
+        <div class="setting-item"><span class="setting-key">Algorithm</span><span class="setting-val">Bühlmann / VPM-B</span></div>
+        <div class="setting-item"><span class="setting-key">GF Low / GF High</span><span class="setting-val">30 / 85 (default)</span></div>
+        <div class="setting-item"><span class="setting-key">VPM Conservatism</span><span class="setting-val">0 – 5</span></div>
+        <div class="setting-item"><span class="setting-key">SAC Bottom</span><span class="setting-val">L/min</span></div>
+        <div class="setting-item"><span class="setting-key">SAC Deco</span><span class="setting-val">L/min</span></div>
+        <div class="setting-item"><span class="setting-key">Ascent Rate</span><span class="setting-val">m/min</span></div>
+        <div class="setting-item"><span class="setting-key">Descent Rate</span><span class="setting-val">m/min</span></div>
+        <div class="setting-item"><span class="setting-key">CCR Setpoints</span><span class="setting-val">Low / High ppO2</span></div>
       </div>
     </div>
   </section>
 
-  <!-- DOWNLOAD -->
+  <!-- DOWNLOAD CTA -->
   <section class="section section--dark" id="download">
     <div class="container download-section">
-      <h2>Ready to download RuntimeX?</h2>
-      <p>Get the macOS DMG or Windows EXE directly from this site.</p>
+      <h2 data-i18n="dl.cta.title">Ready to download RuntimeX?</h2>
+      <p data-i18n="dl.cta.sub">Get the macOS DMG or Windows EXE directly from this site.</p>
       <div class="download-actions">
-        <a href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg" class="btn btn-primary btn-lg">Download DMG</a>
-        <a href="/downloads/RuntimeX-windows.exe" download="RuntimeX-windows.exe" class="btn btn-ghost btn-lg">Download EXE</a>
-        <a href="download.html" class="btn btn-ghost btn-lg">Download page</a>
-        <a href="https://github.com/garzuu/homebrew-runtimex" class="btn btn-ghost btn-lg">Homebrew tap</a>
+        <a href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg" class="btn btn-primary btn-lg" data-i18n="dl.cta.dmg">Download DMG</a>
+        <a href="/downloads/RuntimeX-windows.exe" download="RuntimeX-windows.exe" class="btn btn-ghost btn-lg" data-i18n="dl.cta.exe">Download EXE</a>
+        <a href="download.html" class="btn btn-ghost btn-lg" data-i18n="dl.cta.page">Download page</a>
+        <a href="https://github.com/garzuu/homebrew-runtimex" class="btn btn-ghost btn-lg" data-i18n="dl.cta.brew">Homebrew tap</a>
       </div>
     </div>
   </section>
@@ -347,13 +311,14 @@
         RuntimeX
       </a>
       <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html" data-i18n="nav.privacy">Privacy Policy</a>
+        <a href="support.html" data-i18n="nav.support">Support</a>
       </div>
       <p class="footer-copy">© <span id="copyright-year"></span> <a href="https://github.com/garzuu" target="_blank" rel="noopener">garzuu</a> · MIT / Apache 2.0</p>
     </div>
   </footer>
 
   <script src="app.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>

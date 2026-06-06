@@ -28,170 +28,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── Download page extras ─────────────────────────────────────── */
-    .install-section {
-      padding: 80px 0;
-    }
-    .install-section + .install-section {
-      border-top: 1px solid var(--border-card);
-      padding-top: 64px;
-    }
-    .install-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .install-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
-      background: var(--accent-glow);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .install-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--accent);
-    }
-    .install-header h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    .install-header .platform-badge {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-      background: var(--accent-glow);
-      color: var(--accent);
-      border: 1px solid var(--border);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .install-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .install-body { grid-template-columns: 1fr; }
-    }
-    .install-steps {
-      list-style: none;
-      counter-reset: steps;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .install-steps li {
-      counter-increment: steps;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-    .install-steps li::before {
-      content: counter(steps);
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .install-steps li p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .install-steps li strong {
-      color: var(--text);
-    }
-    .install-download {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: var(--radius);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .install-download h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 0.75rem;
-    }
+    .install-section { padding: 80px 0; }
+    .install-section + .install-section { border-top: 1px solid var(--border-card); padding-top: 64px; }
+    .install-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .install-icon { width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--accent-glow); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .install-icon svg { width: 24px; height: 24px; stroke: var(--accent); }
+    .install-header h2 { font-size: 1.5rem; font-weight: 700; }
+    .install-header .platform-badge { font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--accent-glow); color: var(--accent); border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.05em; }
+    .install-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    @media (max-width: 768px) { .install-body { grid-template-columns: 1fr; } }
+    .install-steps { list-style: none; counter-reset: steps; display: flex; flex-direction: column; gap: 20px; }
+    .install-steps li { counter-increment: steps; display: flex; gap: 16px; align-items: flex-start; }
+    .install-steps li::before { content: counter(steps); width: 28px; height: 28px; border-radius: 50%; background: var(--bg-surface); border: 1px solid var(--border); color: var(--accent); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .install-steps li p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .install-steps li strong { color: var(--text); }
+    .install-download { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .install-download h3 { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
     .install-download .btn { align-self: flex-start; }
-    .sha-link {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--text-faint);
-      text-decoration: none;
-    }
+    .sha-link { font-family: var(--mono); font-size: 0.78rem; color: var(--text-faint); text-decoration: none; }
     .sha-link:hover { color: var(--text-muted); }
-    .homebrew-note {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .homebrew-note { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
     .homebrew-note a { color: var(--accent); text-decoration: none; }
     .homebrew-note a:hover { text-decoration: underline; }
-    .android-warning {
-      background: rgba(255, 180, 0, 0.06);
-      border: 1px solid rgba(255, 180, 0, 0.2);
-      border-radius: var(--radius-sm);
-      padding: 14px 18px;
-      font-size: 0.85rem;
-      color: #f0c060;
-      line-height: 1.5;
-    }
-    .platforms-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 32px 0 0;
-    }
-    .platforms-nav a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
-      border-radius: 40px;
-      border: 1px solid var(--border-card);
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .platforms-nav a:hover {
-      border-color: var(--border);
-      color: var(--text);
-    }
-    .platforms-nav a svg {
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-    }
+    .android-warning { background: rgba(255,180,0,0.06); border: 1px solid rgba(255,180,0,0.2); border-radius: var(--radius-sm); padding: 14px 18px; font-size: 0.85rem; color: #f0c060; line-height: 1.5; }
+    .platforms-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 32px 0 0; }
+    .platforms-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--border-card); color: var(--text-muted); font-size: 0.88rem; font-weight: 500; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .platforms-nav a:hover { border-color: var(--border); color: var(--text); }
+    .platforms-nav a svg { width: 16px; height: 16px; stroke: currentColor; }
   </style>
 </head>
 <body>
@@ -202,23 +65,24 @@
         RuntimeX
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#features">Features</a></li>
-        <li><a href="index.html#algorithms">Algorithms</a></li>
-        <li><a href="index.html#platforms">Platforms</a></li>
-        <li><a href="download.html" class="btn btn-sm">Download</a></li>
+        <li><a href="index.html#features"   data-i18n="nav.features">Features</a></li>
+        <li><a href="index.html#algorithms" data-i18n="nav.algorithms">Algorithms</a></li>
+        <li><a href="index.html#platforms"  data-i18n="nav.platforms">Platforms</a></li>
+        <li><a href="download.html" class="btn btn-sm" data-i18n="nav.download">Download</a></li>
+        <li><button id="lang-toggle" class="lang-toggle">IT</button></li>
       </ul>
     </div>
   </nav>
 
   <main class="download-page">
 
-    <!-- ── Hero ───────────────────────────────────────────────────── -->
+    <!-- Hero -->
     <section class="download-hero">
       <div class="hero-bg"></div>
       <div class="container download-hero-inner">
-        <p class="hero-badge">v1.0.1 · all platforms</p>
-        <h1 class="hero-title">Download <span class="accent">RuntimeX</span></h1>
-        <p class="hero-sub">
+        <p class="hero-badge" data-i18n="dl.hero.badge">v1.0.1 · all platforms</p>
+        <h1 class="hero-title" data-i18n-html="dl.hero.title">Download <span class="accent">RuntimeX</span></h1>
+        <p class="hero-sub" data-i18n="dl.hero.sub">
           Offline-first technical dive planner. Available for macOS, Windows, Linux and Android.
           No account, no backend — everything runs on your device.
         </p>
@@ -235,74 +99,54 @@
         </div>
 
         <div class="platforms-nav">
-          <a href="#macos">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3C7 3 4 7 4 12s3 9 8 9c1.5 0 3-.4 4.2-1.1"/><path d="M16 3c2.8 1.5 4 4.5 4 7"/><path d="M12 8v4l3 3"/></svg>
-            macOS
-          </a>
-          <a href="#homebrew">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-            Homebrew
-          </a>
-          <a href="#windows">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
-            Windows
-          </a>
-          <a href="#linux">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-1.5 5.5-3.5 7l-1 5H9.5l-1-5C6.5 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><path d="M9 17h6"/></svg>
-            Linux
-          </a>
-          <a href="#android">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16V8a7 7 0 0 1 14 0v8"/><path d="M3 16h18"/><path d="M7 16v3a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/></svg>
-            Android
-          </a>
+          <a href="#macos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3C7 3 4 7 4 12s3 9 8 9c1.5 0 3-.4 4.2-1.1"/><path d="M16 3c2.8 1.5 4 4.5 4 7"/><path d="M12 8v4l3 3"/></svg>macOS</a>
+          <a href="#homebrew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Homebrew</a>
+          <a href="#windows"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>Windows</a>
+          <a href="#linux"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-1.5 5.5-3.5 7l-1 5H9.5l-1-5C6.5 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><path d="M9 17h6"/></svg>Linux</a>
+          <a href="#android"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16V8a7 7 0 0 1 14 0v8"/><path d="M3 16h18"/><path d="M7 16v3a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/></svg>Android</a>
         </div>
 
         <div class="download-meta" style="margin-top: 40px;">
           <div class="download-meta-item">
-            <span class="download-meta-label">Platforms</span>
-            <span class="download-meta-value">macOS · Windows · Linux · Android</span>
+            <span class="download-meta-label" data-i18n="dl.meta.label.platforms">Platforms</span>
+            <span class="download-meta-value" data-i18n="dl.meta.platforms">macOS · Windows · Linux · Android</span>
           </div>
           <div class="download-meta-item">
-            <span class="download-meta-label">Privacy</span>
-            <span class="download-meta-value">No account, no backend</span>
+            <span class="download-meta-label" data-i18n="dl.meta.label.privacy">Privacy</span>
+            <span class="download-meta-value" data-i18n="dl.meta.privacy">No account, no backend</span>
           </div>
           <div class="download-meta-item">
-            <span class="download-meta-label">Source</span>
-            <span class="download-meta-value">CI-built from private repo</span>
+            <span class="download-meta-label" data-i18n="dl.meta.label.source">Source</span>
+            <span class="download-meta-value" data-i18n="dl.meta.source">CI-built from private repo</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Install guides ─────────────────────────────────────────── -->
     <div class="container">
 
       <!-- macOS -->
       <section class="install-section" id="macos">
         <div class="install-header">
-          <div class="install-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
-          </div>
+          <div class="install-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg></div>
           <div>
             <h2>macOS</h2>
-            <span class="platform-badge">DMG · Signed &amp; Notarized</span>
+            <span class="platform-badge" data-i18n="dl.macos.badge">DMG · Signed &amp; Notarized</span>
           </div>
         </div>
-
         <div class="install-body">
           <ol class="install-steps">
-            <li><p><strong>Download the DMG</strong> using the button on the right or with <code>curl</code>.</p></li>
-            <li><p><strong>Open the DMG</strong> — double-click the downloaded file to mount it.</p></li>
-            <li><p><strong>Drag RuntimeX into Applications</strong> — drag the app icon onto the Applications shortcut inside the DMG window.</p></li>
-            <li><p><strong>Launch</strong> — open RuntimeX from Launchpad or Spotlight. Because the app is signed and notarized by Apple, no security warning will appear.</p></li>
-            <li><p><strong>Eject the DMG</strong> — right-click the mounted volume in Finder and eject it.</p></li>
+            <li><p data-i18n-html="dl.macos.s1"><strong>Download the DMG</strong> using the button on the right or with <code>curl</code>.</p></li>
+            <li><p data-i18n-html="dl.macos.s2"><strong>Open the DMG</strong> — double-click the downloaded file to mount it.</p></li>
+            <li><p data-i18n-html="dl.macos.s3"><strong>Drag RuntimeX into Applications</strong> — drag the app icon onto the Applications shortcut inside the DMG window.</p></li>
+            <li><p data-i18n-html="dl.macos.s4"><strong>Launch</strong> — open RuntimeX from Launchpad or Spotlight. Because the app is signed and notarized by Apple, no security warning will appear.</p></li>
+            <li><p data-i18n-html="dl.macos.s5"><strong>Eject the DMG</strong> — right-click the mounted volume in Finder and eject it.</p></li>
           </ol>
-
           <div class="install-download">
-            <h3>Download</h3>
+            <h3 data-i18n="dl.dl.label">Download</h3>
             <pre class="command-block"><code>curl -LO https://runtimex.garzuu.com/downloads/RuntimeX-macos.dmg</code></pre>
             <a class="btn btn-primary" href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg">Download DMG</a>
-            <a class="sha-link" href="/downloads/RuntimeX-macos.dmg.sha256">SHA256 checksum</a>
+            <a class="sha-link" href="/downloads/RuntimeX-macos.dmg.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
           </div>
         </div>
       </section>
@@ -310,42 +154,26 @@
       <!-- Homebrew -->
       <section class="install-section" id="homebrew">
         <div class="install-header">
-          <div class="install-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-          </div>
+          <div class="install-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
           <div>
             <h2>Homebrew Cask</h2>
-            <span class="platform-badge">macOS · Terminal</span>
+            <span class="platform-badge" data-i18n="dl.brew.badge">macOS · Terminal</span>
           </div>
         </div>
-
         <div class="install-body">
           <ol class="install-steps">
-            <li>
-              <p><strong>Install Homebrew</strong> if you don't have it yet — see <a href="https://brew.sh" target="_blank" rel="noopener" style="color:var(--accent)">brew.sh</a>.</p>
-            </li>
-            <li>
-              <p><strong>Add the tap</strong> — this registers the RuntimeX cask repository with Homebrew.</p>
-            </li>
-            <li>
-              <p><strong>Install the cask</strong> — Homebrew downloads and installs RuntimeX automatically.</p>
-            </li>
-            <li>
-              <p><strong>Update later</strong> — run <code>brew upgrade --cask runtimex</code> when a new version is available.</p>
-            </li>
-            <li>
-              <p><strong>Uninstall</strong> — run <code>brew uninstall --cask runtimex</code> to remove it completely.</p>
-            </li>
+            <li><p data-i18n-html="dl.brew.s1"><strong>Install Homebrew</strong> if you don't have it yet — see <a href="https://brew.sh" target="_blank" rel="noopener" style="color:var(--accent)">brew.sh</a>.</p></li>
+            <li><p data-i18n-html="dl.brew.s2"><strong>Add the tap</strong> — this registers the RuntimeX cask repository with Homebrew.</p></li>
+            <li><p data-i18n-html="dl.brew.s3"><strong>Install the cask</strong> — Homebrew downloads and installs RuntimeX automatically.</p></li>
+            <li><p data-i18n-html="dl.brew.s4"><strong>Update later</strong> — run <code>brew upgrade --cask runtimex</code> when a new version is available.</p></li>
+            <li><p data-i18n-html="dl.brew.s5"><strong>Uninstall</strong> — run <code>brew uninstall --cask runtimex</code> to remove it completely.</p></li>
           </ol>
-
           <div class="install-download">
-            <h3>Terminal commands</h3>
+            <h3 data-i18n="dl.brew.cmd.label">Terminal commands</h3>
             <pre class="command-block"><code>brew tap garzuu/runtimex
 brew install --cask runtimex</code></pre>
-            <a class="btn btn-ghost" href="https://github.com/garzuu/homebrew-runtimex" target="_blank" rel="noopener">Open tap repo</a>
-            <div class="homebrew-note">
-              The tap is auto-updated by CI after each release. The SHA256 in the cask always matches the file at <a href="/downloads/RuntimeX-macos.dmg">/downloads/RuntimeX-macos.dmg</a>.
-            </div>
+            <a class="btn btn-ghost" href="https://github.com/garzuu/homebrew-runtimex" target="_blank" rel="noopener" data-i18n="dl.brew.repo">Open tap repo</a>
+            <div class="homebrew-note" data-i18n-html="dl.brew.note">The tap is auto-updated by CI after each release. The SHA256 in the cask always matches the file at <a href="/downloads/RuntimeX-macos.dmg">/downloads/RuntimeX-macos.dmg</a>.</div>
           </div>
         </div>
       </section>
@@ -353,29 +181,25 @@ brew install --cask runtimex</code></pre>
       <!-- Windows -->
       <section class="install-section" id="windows">
         <div class="install-header">
-          <div class="install-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
-          </div>
+          <div class="install-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
           <div>
             <h2>Windows</h2>
-            <span class="platform-badge">Installer EXE · x64</span>
+            <span class="platform-badge" data-i18n="dl.win.badge">Installer EXE · x64</span>
           </div>
         </div>
-
         <div class="install-body">
           <ol class="install-steps">
-            <li><p><strong>Download the installer</strong> using the button on the right.</p></li>
-            <li><p><strong>Run the installer</strong> — double-click <code>RuntimeX-windows.exe</code>. Windows may show a SmartScreen prompt; click <em>More info → Run anyway</em>.</p></li>
-            <li><p><strong>Follow the wizard</strong> — choose the install folder (default: <code>C:\Program Files\RuntimeX</code>) and optionally create a desktop shortcut.</p></li>
-            <li><p><strong>Launch</strong> — find RuntimeX in the Start menu or on the desktop.</p></li>
-            <li><p><strong>Uninstall</strong> — use <em>Add or Remove Programs</em> in Windows Settings.</p></li>
+            <li><p data-i18n-html="dl.win.s1"><strong>Download the installer</strong> using the button on the right.</p></li>
+            <li><p data-i18n-html="dl.win.s2"><strong>Run the installer</strong> — double-click <code>RuntimeX-windows.exe</code>. Windows may show a SmartScreen prompt; click <em>More info → Run anyway</em>.</p></li>
+            <li><p data-i18n-html="dl.win.s3"><strong>Follow the wizard</strong> — choose the install folder (default: <code>C:\Program Files\RuntimeX</code>) and optionally create a desktop shortcut.</p></li>
+            <li><p data-i18n-html="dl.win.s4"><strong>Launch</strong> — find RuntimeX in the Start menu or on the desktop.</p></li>
+            <li><p data-i18n-html="dl.win.s5"><strong>Uninstall</strong> — use <em>Add or Remove Programs</em> in Windows Settings.</p></li>
           </ol>
-
           <div class="install-download">
-            <h3>Download</h3>
+            <h3 data-i18n="dl.dl.label">Download</h3>
             <pre class="command-block"><code>curl -LO https://runtimex.garzuu.com/downloads/RuntimeX-windows.exe</code></pre>
             <a class="btn btn-ghost" href="/downloads/RuntimeX-windows.exe" download="RuntimeX-windows.exe">Download EXE</a>
-            <a class="sha-link" href="/downloads/RuntimeX-windows.exe.sha256">SHA256 checksum</a>
+            <a class="sha-link" href="/downloads/RuntimeX-windows.exe.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
           </div>
         </div>
       </section>
@@ -383,37 +207,27 @@ brew install --cask runtimex</code></pre>
       <!-- Linux -->
       <section class="install-section" id="linux">
         <div class="install-header">
-          <div class="install-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-1.5 5.5-3.5 7l-1 5H9.5l-1-5C6.5 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><path d="M9 17h6"/></svg>
-          </div>
+          <div class="install-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-1.5 5.5-3.5 7l-1 5H9.5l-1-5C6.5 14.5 5 12 5 9a7 7 0 0 1 7-7z"/><path d="M9 17h6"/></svg></div>
           <div>
             <h2>Linux</h2>
-            <span class="platform-badge">tar.gz · x64</span>
+            <span class="platform-badge" data-i18n="dl.linux.badge">tar.gz · x64</span>
           </div>
         </div>
-
         <div class="install-body">
           <ol class="install-steps">
-            <li><p><strong>Download the tarball</strong> and verify the SHA256 checksum if needed.</p></li>
-            <li>
-              <p><strong>Extract it</strong> to a folder of your choice, for example <code>~/.local/share/runtimex</code>.</p>
-            </li>
-            <li>
-              <p><strong>Run the binary</strong> — execute <code>./runtimex</code> inside the extracted folder. You can add it to your <code>$PATH</code> or create a desktop entry.</p>
-            </li>
-            <li>
-              <p><strong>Optional: create a launcher</strong> — create a <code>.desktop</code> file in <code>~/.local/share/applications/</code> for Gnome/KDE integration.</p>
-            </li>
+            <li><p data-i18n-html="dl.linux.s1"><strong>Download the tarball</strong> and verify the SHA256 checksum if needed.</p></li>
+            <li><p data-i18n-html="dl.linux.s2"><strong>Extract it</strong> to a folder of your choice, for example <code>~/.local/share/runtimex</code>.</p></li>
+            <li><p data-i18n-html="dl.linux.s3"><strong>Run the binary</strong> — execute <code>./runtimex</code> inside the extracted folder. You can add it to your <code>$PATH</code> or create a desktop entry.</p></li>
+            <li><p data-i18n-html="dl.linux.s4"><strong>Optional: create a launcher</strong> — create a <code>.desktop</code> file in <code>~/.local/share/applications/</code> for Gnome/KDE integration.</p></li>
           </ol>
-
           <div class="install-download">
-            <h3>Download &amp; install</h3>
+            <h3 data-i18n="dl.linux.cmd.label">Download &amp; install</h3>
             <pre class="command-block"><code>curl -LO https://runtimex.garzuu.com/downloads/RuntimeX-linux.tar.gz
 mkdir -p ~/.local/share/runtimex
 tar -xzf RuntimeX-linux.tar.gz -C ~/.local/share/runtimex
 ~/.local/share/runtimex/runtimex</code></pre>
             <a class="btn btn-ghost" href="/downloads/RuntimeX-linux.tar.gz" download="RuntimeX-linux.tar.gz">Download tar.gz</a>
-            <a class="sha-link" href="/downloads/RuntimeX-linux.tar.gz.sha256">SHA256 checksum</a>
+            <a class="sha-link" href="/downloads/RuntimeX-linux.tar.gz.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
           </div>
         </div>
       </section>
@@ -421,42 +235,32 @@ tar -xzf RuntimeX-linux.tar.gz -C ~/.local/share/runtimex
       <!-- Android -->
       <section class="install-section" id="android">
         <div class="install-header">
-          <div class="install-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16V8a7 7 0 0 1 14 0v8"/><path d="M3 16h18"/><path d="M7 16v3a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/></svg>
-          </div>
+          <div class="install-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16V8a7 7 0 0 1 14 0v8"/><path d="M3 16h18"/><path d="M7 16v3a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/></svg></div>
           <div>
             <h2>Android</h2>
-            <span class="platform-badge">APK · arm64</span>
+            <span class="platform-badge" data-i18n="dl.android.badge">APK · arm64</span>
           </div>
         </div>
-
         <div class="install-body">
           <ol class="install-steps">
-            <li>
-              <p><strong>Enable Unknown sources</strong> — go to <em>Settings → Apps → Special app access → Install unknown apps</em> and enable it for your browser or Files app.</p>
-            </li>
-            <li><p><strong>Download the APK</strong> from the button on the right, directly on your Android device.</p></li>
-            <li><p><strong>Open the APK</strong> — tap the downloaded file in your notifications or Files app and confirm the install prompt.</p></li>
-            <li><p><strong>Launch</strong> — find RuntimeX in your app drawer.</p></li>
-            <li>
-              <p><strong>Update</strong> — repeat steps 2–3 with the new APK; Android will update the existing install in place.</p>
-            </li>
+            <li><p data-i18n-html="dl.android.s1"><strong>Enable Unknown sources</strong> — go to <em>Settings → Apps → Special app access → Install unknown apps</em> and enable it for your browser or Files app.</p></li>
+            <li><p data-i18n-html="dl.android.s2"><strong>Download the APK</strong> from the button on the right, directly on your Android device.</p></li>
+            <li><p data-i18n-html="dl.android.s3"><strong>Open the APK</strong> — tap the downloaded file in your notifications or Files app and confirm the install prompt.</p></li>
+            <li><p data-i18n-html="dl.android.s4"><strong>Launch</strong> — find RuntimeX in your app drawer.</p></li>
+            <li><p data-i18n-html="dl.android.s5"><strong>Update</strong> — repeat steps 2–3 with the new APK; Android will update the existing install in place.</p></li>
           </ol>
-
           <div class="install-download">
-            <h3>Download</h3>
+            <h3 data-i18n="dl.android.cmd.label">Download</h3>
             <pre class="command-block"><code># download directly on device or transfer via USB/ADB
 adb install RuntimeX-android.apk</code></pre>
             <a class="btn btn-ghost" href="/downloads/RuntimeX-android.apk" download="RuntimeX-android.apk">Download APK</a>
-            <a class="sha-link" href="/downloads/RuntimeX-android.apk.sha256">SHA256 checksum</a>
-            <div class="android-warning">
-              This APK is signed with a debug key and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.
-            </div>
+            <a class="sha-link" href="/downloads/RuntimeX-android.apk.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
+            <div class="android-warning" data-i18n-html="dl.android.warning">This APK is signed with a debug key and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.</div>
           </div>
         </div>
       </section>
 
-    </div><!-- /container -->
+    </div>
   </main>
 
   <footer class="footer">
@@ -466,13 +270,14 @@ adb install RuntimeX-android.apk</code></pre>
         RuntimeX
       </a>
       <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html" data-i18n="nav.privacy">Privacy Policy</a>
+        <a href="support.html" data-i18n="nav.support">Support</a>
       </div>
       <p class="footer-copy">© <span id="copyright-year"></span> <a href="https://github.com/garzuu" target="_blank" rel="noopener">garzuu</a> · MIT / Apache 2.0</p>
     </div>
   </footer>
 
   <script src="app.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>
