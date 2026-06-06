@@ -91,12 +91,20 @@ jobs:
           codesign --force --sign "$IDENTITY" dist/RuntimeX-macos.dmg
 
       - name: Notarize DMG
+        timeout-minutes: 25
         run: |
-          xcrun notarytool submit dist/RuntimeX-macos.dmg \
+          SUBMISSION=$(xcrun notarytool submit dist/RuntimeX-macos.dmg \
             --apple-id "$APPLE_ID" \
             --password "$APPLE_APP_PASSWORD" \
             --team-id "$APPLE_TEAM_ID" \
-            --wait
+            --wait \
+            --output-format json)
+          echo "$SUBMISSION"
+          STATUS=$(echo "$SUBMISSION" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status',''))")
+          if [ "$STATUS" != "Accepted" ]; then
+            echo "Notarization failed or timed out: $STATUS"
+            exit 1
+          fi
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
