@@ -27,7 +27,7 @@
   </g>
 
   <!-- App name -->
-  <text x="96" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="700" fill="#e8f0f8" letter-spacing="-2">PlannerX</text>
+  <text x="96" y="208" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="700" fill="#e8f0f8" letter-spacing="-2">RuntimeX</text>
 
   <!-- Tagline -->
   <text x="96" y="270" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="400" fill="#7a98b8">Technical Dive Planner</text>
@@ -82,5 +82,5 @@
   </g>
 
   <!-- Domain -->
-  <text x="96" y="560" font-family="system-ui,-apple-system,sans-serif" font-size="22" font-weight="400" fill="#3d5a78">plannerx.garzuu.com</text>
+  <text x="96" y="560" font-family="system-ui,-apple-system,sans-serif" font-size="22" font-weight="400" fill="#3d5a78">runtimex.garzuu.com</text>
 </svg>
