@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PlannerX</title>
+  <meta name="description" content="PlannerX Privacy Policy. No data collected, no account required, everything stays on your device." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 20 Q12 8 16 14 Q20 20 24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="14" r="2" fill="currentColor"/>
+        </svg>
+        PlannerX
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#algorithms">Algorithms</a></li>
+        <li><a href="index.html#platforms">Platforms</a></li>
+        <li><a href="index.html#download" class="btn btn-sm">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="legal-page">
+    <div class="container legal-container">
+
+      <div class="legal-header">
+        <span class="legal-badge">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Effective date: <time datetime="2024-01-01">January 1, 2024</time></p>
+        <p class="legal-intro">
+          PlannerX is built on a simple principle: <strong>your data is yours</strong>.
+          The app has no backend, no account system, and no network communication of any kind.
+          This policy explains exactly what that means in practice.
+        </p>
+      </div>
+
+      <div class="legal-toc">
+        <p class="toc-title">Contents</p>
+        <ol>
+          <li><a href="#no-collection">No data collection</a></li>
+          <li><a href="#local-storage">Local storage</a></li>
+          <li><a href="#permissions">Device permissions</a></li>
+          <li><a href="#third-parties">Third-party services</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </div>
+
+      <div class="legal-body">
+
+        <section id="no-collection">
+          <h2><span class="section-num">1</span>No data collection</h2>
+          <p>PlannerX does not collect, transmit, store, or process any personal data on any server. Specifically:</p>
+          <ul>
+            <li>No account or registration is required to use the app.</li>
+            <li>No usage analytics or telemetry are sent anywhere.</li>
+            <li>No crash reports are automatically uploaded.</li>
+            <li>No advertising identifiers are read or shared.</li>
+            <li>The app never initiates any network request.</li>
+          </ul>
+          <div class="callout">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            PlannerX is fully functional with no internet connection. A network connection is never required, requested, or used.
+          </div>
+        </section>
+
+        <section id="local-storage">
+          <h2><span class="section-num">2</span>Local storage</h2>
+          <p>
+            All data created within PlannerX — saved dive plans, app settings, and UI state —
+            is stored exclusively as JSON files in the app's private documents directory on your device.
+            This directory is managed by the operating system and is not accessible to other apps
+            without explicit user action (e.g. a file-sharing export you initiate).
+          </p>
+          <p>
+            When you export a PDF or use the system share sheet, the resulting file is handled
+            entirely by your device's operating system. PlannerX has no visibility into where
+            you send or save that file.
+          </p>
+          <p>
+            Uninstalling PlannerX removes all locally stored data in accordance with the
+            policies of the respective platform (Android, iOS, etc.).
+          </p>
+        </section>
+
+        <section id="permissions">
+          <h2><span class="section-num">3</span>Device permissions</h2>
+          <p>PlannerX may request the following platform permissions:</p>
+          <div class="permissions-table">
+            <div class="perm-row perm-header">
+              <span>Permission</span>
+              <span>Purpose</span>
+            </div>
+            <div class="perm-row">
+              <span class="perm-name">Storage / Files</span>
+              <span class="perm-desc">Write exported PDF files to device storage when you use the share/print function.</span>
+            </div>
+          </div>
+          <p>No other permissions are requested. The app does not access your location, camera, microphone, contacts, or any other sensitive device resource.</p>
+        </section>
+
+        <section id="third-parties">
+          <h2><span class="section-num">4</span>Third-party services</h2>
+          <p>
+            PlannerX does not integrate any third-party SDK, analytics library, advertising network,
+            or crash reporting service. The only external code included is the Flutter framework
+            and its standard packages (<code>pdf</code>, <code>printing</code>, <code>path_provider</code>),
+            none of which send data to external servers.
+          </p>
+        </section>
+
+        <section id="children">
+          <h2><span class="section-num">5</span>Children</h2>
+          <p>
+            Because PlannerX collects no personal information from anyone, there are no special
+            considerations for users under 13 (COPPA) or under 16 (GDPR). The app is intended
+            for use by certified technical divers; responsible adult supervision is assumed.
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2><span class="section-num">6</span>Changes to this policy</h2>
+          <p>
+            If this policy ever changes, the updated version will be published at
+            <code>plannerx.garzuu.com/privacy</code> with a new effective date.
+            Because we collect no contact information, we cannot notify you directly —
+            please check this page if you have questions.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2><span class="section-num">7</span>Contact</h2>
+          <p>
+            Questions about this policy? Open an issue or start a discussion on the
+            <a href="https://github.com/garzuu/planner_app" target="_blank" rel="noopener">GitHub repository</a>.
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-icon" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 20 Q12 8 16 14 Q20 20 24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="14" r="2" fill="currentColor"/>
+        </svg>
+        PlannerX
+      </a>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+      <p class="footer-copy">Built with Flutter · Offline-first · Open source</p>
+    </div>
+  </footer>
+
+</body>
+</html>
