@@ -1,0 +1,189 @@
+name: Build RuntimeX Downloads
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "RuntimeX source ref (branch or tag)"
+        required: true
+        default: "main"
+      version:
+        description: "Published version"
+        required: true
+        default: "1.0.1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-runtimex-downloads
+  cancel-in-progress: false
+
+jobs:
+  build-macos:
+    name: Build macOS DMG
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+
+      - name: Checkout private RuntimeX source
+        uses: actions/checkout@v4
+        with:
+          repository: garzuu/runtimex
+          ref: ${{ inputs.source_ref }}
+          path: source
+          token: ${{ secrets.RUNTIMEX_SOURCE_TOKEN }}
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: source
+
+      - name: Build app bundle
+        run: flutter build macos --release --no-codesign
+        working-directory: source
+
+      - name: Package DMG
+        run: |
+          mkdir -p dist
+          ./source/scripts/macos/create_dmg.sh \
+            source/build/macos/Build/Products/Release/runtimex.app \
+            dist/RuntimeX-macos.dmg
+
+      - name: Create DMG checksum
+        run: shasum -a 256 dist/RuntimeX-macos.dmg > dist/RuntimeX-macos.dmg.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: runtimex-macos
+          path: dist/*
+          retention-days: 7
+
+  build-windows:
+    name: Build Windows EXE
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+
+      - name: Checkout private RuntimeX source
+        uses: actions/checkout@v4
+        with:
+          repository: garzuu/runtimex
+          ref: ${{ inputs.source_ref }}
+          path: source
+          token: ${{ secrets.RUNTIMEX_SOURCE_TOKEN }}
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: source
+
+      - name: Build app bundle
+        run: flutter build windows --release
+        working-directory: source
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+
+      - name: Create installer script
+        shell: pwsh
+        run: |
+          $version = "${{ inputs.version }}"
+          @"
+          [Setup]
+          AppId={{5F8F77A2-6F54-4F3D-9F2C-4C7ABF7E3B5A}}
+          AppName=RuntimeX
+          AppVersion=$version
+          AppPublisher=garzuu
+          DefaultDirName={autopf}\RuntimeX
+          DefaultGroupName=RuntimeX
+          DisableProgramGroupPage=yes
+          OutputDir=dist
+          OutputBaseFilename=RuntimeX-windows
+          Compression=lzma2
+          SolidCompression=yes
+          ArchitecturesInstallIn64BitMode=x64
+          WizardStyle=modern
+          PrivilegesRequiredOverridesAllowed=dialog
+
+          [Tasks]
+          Name: "desktopicon"; Description: "Create a &desktop icon"; GroupDescription: "Additional icons:"; Flags: unchecked
+
+          [Files]
+          Source: "source\build\windows\x64\runner\Release\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
+
+          [Icons]
+          Name: "{autoprograms}\RuntimeX"; Filename: "{app}\runtimex.exe"
+          Name: "{autodesktop}\RuntimeX"; Filename: "{app}\runtimex.exe"; Tasks: desktopicon
+          "@ | Set-Content -NoNewline installer.iss
+
+      - name: Build installer
+        shell: pwsh
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
+
+      - name: Create checksum
+        shell: pwsh
+        run: |
+          Get-FileHash -Algorithm SHA256 dist\RuntimeX-windows.exe |
+            ForEach-Object { "$($_.Hash.ToLower())  dist\RuntimeX-windows.exe" } |
+            Set-Content dist\RuntimeX-windows.exe.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: runtimex-windows
+          path: dist/*
+          retention-days: 7
+
+  publish:
+    name: Publish downloads
+    runs-on: ubuntu-latest
+    needs:
+      - build-macos
+      - build-windows
+
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+
+      - name: Download macOS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: runtimex-macos
+          path: incoming/macos
+
+      - name: Download Windows artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: runtimex-windows
+          path: incoming/windows
+
+      - name: Publish downloads directory
+        run: |
+          mkdir -p downloads
+          cp incoming/macos/RuntimeX-macos.dmg downloads/RuntimeX-macos.dmg
+          cp incoming/macos/RuntimeX-macos.dmg.sha256 downloads/RuntimeX-macos.dmg.sha256
+          cp incoming/windows/RuntimeX-windows.exe downloads/RuntimeX-windows.exe
+          cp incoming/windows/RuntimeX-windows.exe.sha256 downloads/RuntimeX-windows.exe.sha256
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/RuntimeX-macos.dmg downloads/RuntimeX-macos.dmg.sha256 downloads/RuntimeX-windows.exe downloads/RuntimeX-windows.exe.sha256
+          if git diff --cached --quiet; then
+            echo "No download changes to publish."
+            exit 0
+          fi
+          git commit -m "feat(downloads): publish RuntimeX binaries"
+          git push

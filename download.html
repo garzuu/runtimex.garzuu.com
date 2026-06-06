@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download RuntimeX for macOS</title>
-  <meta name="description" content="Download RuntimeX for macOS or install it with Homebrew Cask. Offline-first technical dive planning, no account required." />
+  <title>Download RuntimeX</title>
+  <meta name="description" content="Download RuntimeX for macOS and Windows or install it with Homebrew Cask. Offline-first technical dive planning, no account required." />
 
   <link rel="canonical" href="https://runtimex.garzuu.com/download.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://runtimex.garzuu.com/download.html" />
-  <meta property="og:title" content="Download RuntimeX for macOS" />
-  <meta property="og:description" content="Download RuntimeX for macOS or install it with Homebrew Cask. Offline-first technical dive planning, no account required." />
+  <meta property="og:title" content="Download RuntimeX" />
+  <meta property="og:description" content="Download RuntimeX for macOS and Windows or install it with Homebrew Cask. Offline-first technical dive planning, no account required." />
   <meta property="og:image" content="https://runtimex.garzuu.com/og-image.svg" />
   <meta property="og:site_name" content="RuntimeX" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Download RuntimeX for macOS" />
-  <meta name="twitter:description" content="Download RuntimeX for macOS or install it with Homebrew Cask." />
+  <meta name="twitter:title" content="Download RuntimeX" />
+  <meta name="twitter:description" content="Download RuntimeX for macOS and Windows or install it with Homebrew Cask." />
   <meta name="twitter:image" content="https://runtimex.garzuu.com/og-image.svg" />
 
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -47,16 +47,21 @@
     <section class="download-hero">
       <div class="hero-bg"></div>
       <div class="container download-hero-inner">
-        <p class="hero-badge">macOS release</p>
-        <h1 class="hero-title">Download RuntimeX for <span class="accent">macOS</span></h1>
+        <p class="hero-badge">desktop release</p>
+        <h1 class="hero-title">Download RuntimeX for <span class="accent">macOS and Windows</span></h1>
         <p class="hero-sub">
-          RuntimeX is an offline-first technical dive planner. Download the DMG directly
-          or install it from the terminal with Homebrew Cask.
+          RuntimeX is an offline-first technical dive planner. Download the DMG or Windows installer directly
+          from this site, or install it from the terminal with Homebrew Cask.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg">Download DMG</a>
-          <a class="btn btn-ghost btn-lg" href="https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg.sha256">SHA256</a>
+          <a class="btn btn-primary btn-lg" href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg">Download DMG</a>
+          <a class="btn btn-ghost btn-lg" href="/downloads/RuntimeX-windows.exe" download="RuntimeX-windows.exe">Download EXE</a>
+        </div>
+
+        <div class="download-checks">
+          <a href="/downloads/RuntimeX-macos.dmg.sha256">macOS SHA256</a>
+          <a href="/downloads/RuntimeX-windows.exe.sha256">Windows SHA256</a>
         </div>
 
         <div class="download-meta">
@@ -66,7 +71,7 @@
           </div>
           <div class="download-meta-item">
             <span class="download-meta-label">Source</span>
-            <span class="download-meta-value">github.com/garzuu/runtimex</span>
+            <span class="download-meta-value">private repo build</span>
           </div>
           <div class="download-meta-item">
             <span class="download-meta-label">Privacy</span>
@@ -80,7 +85,7 @@
       <div class="container">
         <div class="section-header">
           <h2>Choose your install path</h2>
-          <p>Both routes point to the same release asset.</p>
+          <p>Both routes point to binaries built in the site repo from the private source repo.</p>
         </div>
 
         <div class="download-grid">
@@ -92,10 +97,24 @@
                 <path d="M4 19h16" />
               </svg>
             </div>
-            <h3>Direct download</h3>
-            <p>Grab the DMG from the GitHub release page, open it, and drag RuntimeX into Applications.</p>
-            <pre class="command-block"><code>curl -LO https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg</code></pre>
-            <a class="btn btn-primary" href="https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg">Download RuntimeX 1.0.1</a>
+            <h3>macOS DMG</h3>
+            <p>Download the DMG from this site, open it, and drag RuntimeX into Applications.</p>
+            <pre class="command-block"><code>curl -LO https://runtimex.garzuu.com/downloads/RuntimeX-macos.dmg</code></pre>
+            <a class="btn btn-primary" href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg">Download DMG</a>
+          </article>
+
+          <article class="download-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 6h16v12H4z" />
+                <path d="M8 10h8" />
+                <path d="M8 14h5" />
+              </svg>
+            </div>
+            <h3>Windows EXE</h3>
+            <p>Download the Windows installer directly from this site. It is built from the private source repo and published here.</p>
+            <pre class="command-block"><code>curl -LO https://runtimex.garzuu.com/downloads/RuntimeX-windows.exe</code></pre>
+            <a class="btn btn-ghost" href="/downloads/RuntimeX-windows.exe" download="RuntimeX-windows.exe">Download EXE</a>
           </article>
 
           <article class="download-card">
@@ -115,7 +134,7 @@ brew install --cask runtimex</code></pre>
         </div>
 
         <div class="download-note">
-          <p>Verify the release with the SHA256 file if you want to confirm the download before opening it.</p>
+          <p>Verify the release with the SHA256 files in the downloads folder if you want to confirm the download before opening it.</p>
         </div>
       </div>
     </section>

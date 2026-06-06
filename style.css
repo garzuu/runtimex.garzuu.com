@@ -551,6 +551,25 @@ body {
 
 .download-actions { display: flex; justify-content: center; gap: 12px; }
 
+.download-checks {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.download-checks a {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--mono);
+}
+
+.download-checks a:hover {
+  color: var(--accent);
+}
+
 /* ── Download page ───────────────────────────────────────────── */
 .download-page {
   min-height: 100vh;
@@ -608,7 +627,7 @@ body {
 
 .download-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -983,8 +1002,8 @@ body {
   .platforms-grid { grid-template-columns: repeat(3, 1fr); }
   .settings-grid { grid-template-columns: repeat(2, 1fr); }
   .support-grid { grid-template-columns: repeat(2, 1fr); }
-  .download-meta,
-  .download-grid { grid-template-columns: 1fr; }
+  .download-meta { grid-template-columns: 1fr; }
+  .download-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ── Mobile  ≤ 640px ──────────────────────────────────────────── */
