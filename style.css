@@ -434,6 +434,12 @@ body {
   gap: 16px;
 }
 
+.platforms-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
 .platform-card {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
