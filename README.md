@@ -1,34 +1,10 @@
-# plannerx.garzuu.com
+# PlannerX — Website
 
-Static marketing site for [PlannerX](https://github.com/garzuu/planner_app) — a technical dive planning app for iOS and Android.
+Marketing site for [PlannerX](https://plannerx.garzuu.com), a technical dive planning app for iOS and Android.
 
-Live at **[plannerx.garzuu.com](https://plannerx.garzuu.com)**
+## Report a bug or request a feature
 
-## Pages
-
-| File | URL |
-|------|-----|
-| `index.html` | Landing page — hero, features, algorithms, platforms, download |
-| `privacy.html` | Privacy policy |
-| `support.html` | Support, FAQ, GitHub links |
-
-## Stack
-
-- Pure HTML / CSS / JS — no build step, no framework
-- Hosted on Cloudflare Workers (static assets)
-
-## Assets
-
-| File | Description |
-|------|-------------|
-| `logo.png` | 128×128 app icon (nav logo) |
-| `favicon.png` | 32×32 favicon |
-| `apple-touch-icon.png` | 180×180 iOS home-screen icon |
-| `og-image.svg` | 1200×630 Open Graph / Twitter Card image |
-
-## Deploy
-
-Cloudflare Workers auto-deploys from `main` via `wrangler.jsonc`.
+Open an [issue](https://github.com/garzuu/plannerx.garzuu.com/issues) or start a [discussion](https://github.com/garzuu/plannerx.garzuu.com/discussions) — all feedback is welcome here.
 
 ## License
 
