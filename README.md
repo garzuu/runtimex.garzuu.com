@@ -9,4 +9,4 @@ Open an [issue](https://github.com/garzuu/plannerx.garzuu.com/issues) or start a
 ## License
 
 Dual-licensed under [MIT](LICENSE) and [Apache 2.0](LICENSE-APACHE).  
-Copyright 2025 [garzuu](https://github.com/garzuu)
+Copyright 2026 [garzuu](https://github.com/garzuu)
