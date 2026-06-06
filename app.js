@@ -1,3 +1,8 @@
+// Copyright year
+document.querySelectorAll('#copyright-year').forEach((el) => {
+  el.textContent = new Date().getFullYear();
+});
+
 // Animate elements into view on scroll
 const observer = new IntersectionObserver(
   (entries) => {
