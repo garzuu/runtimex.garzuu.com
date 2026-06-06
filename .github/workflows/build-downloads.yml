@@ -40,6 +40,22 @@ jobs:
         with:
           channel: stable
 
+      - name: Import Developer ID certificate
+        run: |
+          KEYCHAIN_PATH="$RUNNER_TEMP/build.keychain"
+          CERT_PATH="$RUNNER_TEMP/certificate.p12"
+          echo "$MACOS_CERTIFICATE" | base64 --decode -o "$CERT_PATH"
+          security create-keychain -p "ci-keychain" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "ci-keychain" "$KEYCHAIN_PATH"
+          security import "$CERT_PATH" -k "$KEYCHAIN_PATH" -P "$MACOS_CERTIFICATE_PWD" \
+            -T /usr/bin/codesign -T /usr/bin/security
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "ci-keychain" "$KEYCHAIN_PATH"
+        env:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+
       - name: Install dependencies
         run: flutter pub get
         working-directory: source
@@ -47,10 +63,14 @@ jobs:
       - name: Build app bundle
         run: flutter build macos --release
         working-directory: source
-        env:
-          CODE_SIGN_IDENTITY: ""
-          CODE_SIGNING_REQUIRED: "NO"
-          CODE_SIGNING_ALLOWED: "NO"
+
+      - name: Sign app bundle
+        run: |
+          codesign --deep --force --verify --verbose \
+            --sign "Developer ID Application" \
+            --options runtime \
+            --entitlements source/macos/Runner/Release.entitlements \
+            source/build/macos/Build/Products/Release/runtimex.app
 
       - name: Package DMG
         run: |
@@ -58,6 +78,25 @@ jobs:
           ./source/scripts/macos/create_dmg.sh \
             source/build/macos/Build/Products/Release/runtimex.app \
             dist/RuntimeX-macos.dmg
+
+      - name: Sign DMG
+        run: |
+          codesign --force --sign "Developer ID Application" dist/RuntimeX-macos.dmg
+
+      - name: Notarize DMG
+        run: |
+          xcrun notarytool submit dist/RuntimeX-macos.dmg \
+            --apple-id "$APPLE_ID" \
+            --password "$APPLE_APP_PASSWORD" \
+            --team-id "$APPLE_TEAM_ID" \
+            --wait
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+
+      - name: Staple notarization ticket
+        run: xcrun stapler staple dist/RuntimeX-macos.dmg
 
       - name: Create DMG checksum
         run: shasum -a 256 dist/RuntimeX-macos.dmg > dist/RuntimeX-macos.dmg.sha256
