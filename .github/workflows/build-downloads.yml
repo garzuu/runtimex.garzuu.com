@@ -91,7 +91,7 @@ jobs:
           codesign --force --sign "$IDENTITY" dist/RuntimeX-macos.dmg
 
       - name: Notarize DMG
-        timeout-minutes: 25
+        timeout-minutes: 90
         run: |
           SUBMISSION=$(xcrun notarytool submit dist/RuntimeX-macos.dmg \
             --apple-id "$APPLE_ID" \
