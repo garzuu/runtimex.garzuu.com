@@ -45,8 +45,12 @@ jobs:
         working-directory: source
 
       - name: Build app bundle
-        run: flutter build macos --release --no-codesign
+        run: flutter build macos --release
         working-directory: source
+        env:
+          CODE_SIGN_IDENTITY: ""
+          CODE_SIGNING_REQUIRED: "NO"
+          CODE_SIGNING_ALLOWED: "NO"
 
       - name: Package DMG
         run: |
