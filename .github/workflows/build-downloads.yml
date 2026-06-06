@@ -348,3 +348,23 @@ jobs:
           fi
           git commit -m "feat(downloads): publish RuntimeX binaries"
           git push
+
+      - name: Update Homebrew tap
+        env:
+          TAP_TOKEN: ${{ secrets.RUNTIMEX_SOURCE_TOKEN }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          SHA256=$(cut -d' ' -f1 downloads/RuntimeX-macos.dmg.sha256)
+          git clone "https://x-access-token:${TAP_TOKEN}@github.com/garzuu/homebrew-runtimex.git" tap
+          sed -i "s/version \".*\"/version \"${VERSION}\"/" tap/Casks/runtimex.rb
+          sed -i "s/sha256 \".*\"/sha256 \"${SHA256}\"/" tap/Casks/runtimex.rb
+          cd tap
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Casks/runtimex.rb
+          if git diff --cached --quiet; then
+            echo "Cask already up to date."
+            exit 0
+          fi
+          git commit -m "chore: update runtimex cask to v${VERSION}"
+          git push
