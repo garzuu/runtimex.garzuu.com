@@ -581,6 +581,13 @@ body {
 }
 .footer-links a:hover { color: var(--accent); }
 
+.footer-copy a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-copy a:hover { color: var(--accent); }
+
 /* ── Legal pages ──────────────────────────────────────────────── */
 .legal-page {
   padding-top: 64px;
