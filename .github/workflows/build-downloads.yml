@@ -86,7 +86,9 @@ jobs:
 
       - name: Sign DMG
         run: |
-          codesign --force --sign "Developer ID Application" dist/RuntimeX-macos.dmg
+          IDENTITY=$(security find-identity -v -p codesigning "$RUNNER_TEMP/build.keychain" \
+            | grep -o '"[^"]*"' | head -1 | tr -d '"')
+          codesign --force --sign "$IDENTITY" dist/RuntimeX-macos.dmg
 
       - name: Notarize DMG
         run: |
