@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlannerX — Technical Dive Planner</title>
+  <meta name="description" content="Offline-first technical dive planning app. Bühlmann ZHL-16C, VPM-B, CCR support, PDF export. No account required." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="#" class="nav-logo">
+        <svg class="nav-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 20 Q12 8 16 14 Q20 20 24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="14" r="2" fill="currentColor"/>
+        </svg>
+        PlannerX
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="#download" class="btn btn-sm">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">Offline-first · No account · No backend</div>
+      <h1 class="hero-title">Plan your dive.<br><span class="accent">Trust the math.</span></h1>
+      <p class="hero-sub">
+        PlannerX is a technical dive planning app built for precision.
+        Bühlmann ZHL-16C and VPM-B engines, CCR support, multi-gas decompression,
+        PDF export — everything runs on your device.
+      </p>
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary">Get the App</a>
+        <a href="#features" class="btn btn-ghost">See Features</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">2</span>
+          <span class="stat-label">Deco Algorithms</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-value">∞</span>
+          <span class="stat-label">Gas Mixes</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-value">6</span>
+          <span class="stat-label">Platforms</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-value">0</span>
+          <span class="stat-label">Accounts Needed</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything you need in the water</h2>
+        <p>Designed for technical divers who demand accuracy without complexity.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card feature-card--large">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 19 Q7 6 10 12 Q13 18 17 8 Q19 4 21 7"/>
+              <line x1="3" y1="19" x2="21" y2="19" stroke-width="1"/>
+            </svg>
+          </div>
+          <h3>Decompression Engine</h3>
+          <p>Full Bühlmann ZHL-16C implementation with configurable gradient factors (GF Low / GF High). VPM-B conservatism slider from 0 to 5. NDL calculation, lost-gas scenarios, and SAC-based gas consumption for every phase of your dive.</p>
+          <ul class="feature-list">
+            <li>Gradient factors (GF Low / GF High)</li>
+            <li>NDL &amp; ceiling tracking</li>
+            <li>Lost-gas worst-case scenarios</li>
+            <li>SAC bottom &amp; deco consumption</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 3"/>
+            </svg>
+          </div>
+          <h3>CCR Support</h3>
+          <p>Closed-Circuit Rebreather mode with constant-ppO2 loop gas, configurable low/high setpoint, diluent mix, and full bailout scenario planning.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <h3>Multi-Gas Planning</h3>
+          <p>Bottom gas plus unlimited deco and travel gases, each with per-gas ppO2 limits. Switch gases automatically at optimal depths.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Interactive Profile Chart</h3>
+          <p>Depth/time profile with gradient fill. Tap to toggle: dashed ceiling line showing decompression obligation over time, plus a live stats panel (TTS, Runtime, NDL, stop count).</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3>PDF Export</h3>
+          <p>Full-page report with key metrics, dive parameters, gas inventory, profile chart, deco schedule, gas consumption, and lost-gas scenarios. Share or print via system share sheet.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+          </div>
+          <h3>Saved Plans</h3>
+          <p>Name and save any generated plan. Sidebar with plan list showing depth, time, gas, TTS, and stop count. Load or delete with confirmation anytime.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALGORITHMS -->
+  <section class="section section--dark" id="algorithms">
+    <div class="container">
+      <div class="section-header">
+        <h2>Two proven algorithms.<br>One app.</h2>
+        <p>Choose the model that matches your training and diving style.</p>
+      </div>
+      <div class="algo-grid">
+        <div class="algo-card">
+          <div class="algo-header">
+            <span class="algo-tag">ZH-L16C</span>
+            <h3>Bühlmann</h3>
+          </div>
+          <p class="algo-desc">The industry standard for dissolved-gas decompression modelling. Fine-tune conservatism with gradient factors — GF Low controls first stop depth, GF High controls surfacing ceiling.</p>
+          <div class="algo-params">
+            <div class="param">
+              <span class="param-name">GF Low</span>
+              <div class="param-bar">
+                <div class="param-fill" style="--fill: 30%"></div>
+              </div>
+              <span class="param-hint">First stop depth</span>
+            </div>
+            <div class="param">
+              <span class="param-name">GF High</span>
+              <div class="param-bar">
+                <div class="param-fill" style="--fill: 85%"></div>
+              </div>
+              <span class="param-hint">Surfacing ceiling</span>
+            </div>
+          </div>
+        </div>
+        <div class="algo-card">
+          <div class="algo-header">
+            <span class="algo-tag">VPM-B</span>
+            <h3>Varying Permeability Model</h3>
+          </div>
+          <p class="algo-desc">Bubble-based model that accounts for nucleation of microbubbles. Adjust conservatism on a simple 0–5 slider — no deep knowledge of model internals required.</p>
+          <div class="algo-params">
+            <div class="param">
+              <span class="param-name">Conservatism</span>
+              <div class="param-bar">
+                <div class="param-fill" style="--fill: 60%"></div>
+              </div>
+              <span class="param-hint">0 (aggressive) → 5 (conservative)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section class="section" id="platforms">
+    <div class="container">
+      <div class="section-header">
+        <h2>Your device. Every device.</h2>
+        <p>One codebase, six platforms. Plan from your phone at the dive site or from your desktop at home.</p>
+      </div>
+      <div class="platforms-grid">
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.39.07 2.34.74 3.15.8 1.21-.24 2.37-.93 3.67-.84 1.56.14 2.73.72 3.51 1.84-3.09 1.95-2.63 5.81.29 7.02-.73 1.81-1.65 3.63-2.62 4.06M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25"/>
+            </svg>
+          </div>
+          <span>iOS</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.523 15.341a4.59 4.59 0 0 1-2.557.773 4.59 4.59 0 0 1-3.249-1.346L6.25 9.301a4.59 4.59 0 0 1 0-6.498A4.59 4.59 0 0 1 9.5 1.457a4.59 4.59 0 0 1 3.249 1.346l5.467 5.467a4.59 4.59 0 0 1 0 6.498 4.59 4.59 0 0 1-.693.573zM6.477 8.659a4.59 4.59 0 0 1 2.557-.773 4.59 4.59 0 0 1 3.249 1.346l5.467 5.467a4.59 4.59 0 0 1 0 6.498A4.59 4.59 0 0 1 14.5 22.543a4.59 4.59 0 0 1-3.249-1.346L5.784 15.73a4.59 4.59 0 0 1 0-6.498 4.59 4.59 0 0 1 .693-.573z"/>
+            </svg>
+          </div>
+          <span>Android</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+            </svg>
+          </div>
+          <span>Windows</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+          <span>macOS</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.452-1.27 1.986-1.073.574-2.959 1.685-3.68 3.07-.646 1.215-.49 2.355-.045 3.232.526 1.03 1.56 1.747 2.768 2.006.95.21 2.095.193 3.115.165.75-.021 1.62.013 2.303.26.586.213 1.003.557 1.164 1.276.174.786.175 2.076-.014 2.922-.186.834-.62 1.494-1.416 1.9-.726.37-1.714.491-2.62.491-.744 0-1.456-.088-2.085-.286a3.92 3.92 0 0 1-1.38-.772C3.09 20.25 2.9 18.82 3.2 17.572c.12-.504.337-.98.611-1.37-1.7.44-3.38 1.17-3.71 3.073-.25 1.43.44 2.95 1.57 3.9C2.79 24 4.18 24 5.62 24h12.77c1.44 0 2.83 0 3.95-1.014 1.13-.95 1.82-2.47 1.57-3.9-.33-1.9-2.01-2.63-3.71-3.073.274.39.491.866.611 1.37.3 1.248.11 2.678-.826 3.636a3.92 3.92 0 0 1-1.38.772c-.63.198-1.34.286-2.085.286-.906 0-1.894-.121-2.62-.491-.796-.406-1.23-1.066-1.416-1.9-.189-.846-.188-2.136-.014-2.922.161-.719.578-1.063 1.164-1.276.683-.247 1.553-.281 2.303-.26 1.02.028 2.165.045 3.115-.165 1.208-.259 2.242-.976 2.768-2.006.445-.877.601-2.017-.045-3.232-.721-1.385-2.607-2.496-3.68-3.07-.97-.534-1.194-.894-1.27-1.986-.065-1.491 1.056-5.965-3.17-6.298-.165-.013-.325-.021-.48-.021z"/>
+            </svg>
+          </div>
+          <span>Linux</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <span>Web</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFLINE BANNER -->
+  <section class="section section--accent">
+    <div class="container offline-banner">
+      <div class="offline-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M1 1l22 22"/>
+          <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.56 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+        </svg>
+      </div>
+      <div class="offline-text">
+        <h3>100% Offline. Always.</h3>
+        <p>No Wi-Fi at the dive site? No problem. PlannerX requires zero network connection — plans are computed and saved entirely on your device. Your data never leaves your hands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="section" id="settings">
+    <div class="container">
+      <div class="section-header">
+        <h2>Configured your way</h2>
+        <p>Set persistent defaults once. Override per dive whenever you need to.</p>
+      </div>
+      <div class="settings-grid">
+        <div class="setting-item">
+          <span class="setting-key">Algorithm</span>
+          <span class="setting-val">Bühlmann / VPM-B</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">GF Low / GF High</span>
+          <span class="setting-val">30 / 85 (default)</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">VPM Conservatism</span>
+          <span class="setting-val">0 – 5</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">SAC Bottom</span>
+          <span class="setting-val">L/min</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">SAC Deco</span>
+          <span class="setting-val">L/min</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">Ascent Rate</span>
+          <span class="setting-val">m/min</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">Descent Rate</span>
+          <span class="setting-val">m/min</span>
+        </div>
+        <div class="setting-item">
+          <span class="setting-key">CCR Setpoints</span>
+          <span class="setting-val">Low / High ppO2</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="section section--dark" id="download">
+    <div class="container download-section">
+      <h2>Ready to dive deeper?</h2>
+      <p>PlannerX is open source. Free to use, free to inspect, free to trust.</p>
+      <div class="download-actions">
+        <a href="https://github.com/garzuu/planner_app" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#" class="nav-logo">
+        <svg class="nav-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 20 Q12 8 16 14 Q20 20 24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="14" r="2" fill="currentColor"/>
+        </svg>
+        PlannerX
+      </a>
+      <p class="footer-copy">Built with Flutter · Offline-first · Open source</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
