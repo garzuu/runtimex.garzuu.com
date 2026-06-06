@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download RuntimeX for macOS</title>
+  <meta name="description" content="Download RuntimeX for macOS or install it with Homebrew Cask. Offline-first technical dive planning, no account required." />
+
+  <link rel="canonical" href="https://runtimex.garzuu.com/download.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://runtimex.garzuu.com/download.html" />
+  <meta property="og:title" content="Download RuntimeX for macOS" />
+  <meta property="og:description" content="Download RuntimeX for macOS or install it with Homebrew Cask. Offline-first technical dive planning, no account required." />
+  <meta property="og:image" content="https://runtimex.garzuu.com/og-image.svg" />
+  <meta property="og:site_name" content="RuntimeX" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Download RuntimeX for macOS" />
+  <meta name="twitter:description" content="Download RuntimeX for macOS or install it with Homebrew Cask." />
+  <meta name="twitter:image" content="https://runtimex.garzuu.com/og-image.svg" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" class="nav-icon" alt="RuntimeX" />
+        RuntimeX
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#algorithms">Algorithms</a></li>
+        <li><a href="index.html#platforms">Platforms</a></li>
+        <li><a href="download.html" class="btn btn-sm">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="download-page">
+    <section class="download-hero">
+      <div class="hero-bg"></div>
+      <div class="container download-hero-inner">
+        <p class="hero-badge">macOS release</p>
+        <h1 class="hero-title">Download RuntimeX for <span class="accent">macOS</span></h1>
+        <p class="hero-sub">
+          RuntimeX is an offline-first technical dive planner. Download the DMG directly
+          or install it from the terminal with Homebrew Cask.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg">Download DMG</a>
+          <a class="btn btn-ghost btn-lg" href="https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg.sha256">SHA256</a>
+        </div>
+
+        <div class="download-meta">
+          <div class="download-meta-item">
+            <span class="download-meta-label">Install method</span>
+            <span class="download-meta-value">DMG or Homebrew Cask</span>
+          </div>
+          <div class="download-meta-item">
+            <span class="download-meta-label">Source</span>
+            <span class="download-meta-value">github.com/garzuu/runtimex</span>
+          </div>
+          <div class="download-meta-item">
+            <span class="download-meta-label">Privacy</span>
+            <span class="download-meta-value">No account, no backend</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Choose your install path</h2>
+          <p>Both routes point to the same release asset.</p>
+        </div>
+
+        <div class="download-grid">
+          <article class="download-card download-card--primary">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3v12" />
+                <path d="M7 10l5 5 5-5" />
+                <path d="M4 19h16" />
+              </svg>
+            </div>
+            <h3>Direct download</h3>
+            <p>Grab the DMG from the GitHub release page, open it, and drag RuntimeX into Applications.</p>
+            <pre class="command-block"><code>curl -LO https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg</code></pre>
+            <a class="btn btn-primary" href="https://github.com/garzuu/runtimex/releases/download/v1.0.1/RuntimeX-1.0.1.dmg">Download RuntimeX 1.0.1</a>
+          </article>
+
+          <article class="download-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M16.5 18.5a4.5 4.5 0 0 0-9 0" />
+                <path d="M12 2v16" />
+                <path d="M7 7l5-5 5 5" />
+              </svg>
+            </div>
+            <h3>Homebrew Cask</h3>
+            <p>Prefer the terminal? Use the dedicated tap repository and keep updates simple.</p>
+            <pre class="command-block"><code>brew tap garzuu/runtimex
+brew install --cask runtimex</code></pre>
+            <a class="btn btn-ghost" href="https://github.com/garzuu/homebrew-runtimex">Open tap repo</a>
+          </article>
+        </div>
+
+        <div class="download-note">
+          <p>Verify the release with the SHA256 file if you want to confirm the download before opening it.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" class="nav-icon" alt="RuntimeX" />
+        RuntimeX
+      </a>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+      </div>
+      <p class="footer-copy">© <span id="copyright-year"></span> <a href="https://github.com/garzuu" target="_blank" rel="noopener">garzuu</a> · MIT / Apache 2.0</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
