@@ -64,7 +64,7 @@ jobs:
 
       - name: Inject app icon into asset catalog
         run: |
-          ICONSET_DIR=$(mktemp -d)
+          ICONSET_DIR=$(mktemp -d)/AppIcon.iconset
           iconutil --convert iconset "$GITHUB_WORKSPACE/assets/AppIcon.icns" --output "$ICONSET_DIR"
           APPICONSET="source/macos/Runner/Assets.xcassets/AppIcon.appiconset"
           sips -z 16 16     "$ICONSET_DIR/icon_16x16.png"    --out "$APPICONSET/app_icon_16.png"
