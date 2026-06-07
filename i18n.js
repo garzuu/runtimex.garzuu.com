@@ -127,6 +127,23 @@ const T = {
     "dl.android.cmd.label": "Download",
     "dl.android.warning": "This APK is signed with a debug key and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.",
 
+    // Download page — how to install (compact steps)
+    "dl.how.title":       "How to install",
+    "dl.how.macos.1":     "Choose DMG or Homebrew.",
+    "dl.how.macos.2":     "DMG — open the downloaded file and drag RuntimeX into your Applications folder.",
+    "dl.how.macos.3":     "Homebrew — copy the command, paste it into Terminal and press Enter.",
+    "dl.how.macos.4":     "Blocked by Gatekeeper on first launch? Go to System Settings → Privacy & Security → Open Anyway.",
+    "dl.how.windows.1":   "Download and run the installer.",
+    "dl.how.windows.2":   "SmartScreen may appear — click <em>More info → Run anyway</em>.",
+    "dl.how.windows.3":   "Follow the wizard. Find RuntimeX in the Start menu when done.",
+    "dl.how.linux.1":     "Download the tarball.",
+    "dl.how.linux.2":     "Extract: <code>tar -xzf RuntimeX-linux.tar.gz -C ~/.local/share/runtimex</code>",
+    "dl.how.linux.3":     "Run: <code>~/.local/share/runtimex/runtimex</code>",
+    "dl.how.android.1":   "Enable unknown sources — <em>Settings → Apps → Special app access → Install unknown apps</em>.",
+    "dl.how.android.2":   "Download the APK on your device.",
+    "dl.how.android.3":   "Tap the downloaded file and confirm the install.",
+    "dl.how.android.4":   "To update, repeat steps 2–3 with the new APK.",
+
     // Support page
     "support.title": "Support",
     "support.sub":   "Need help with RuntimeX? Start here.",
@@ -267,6 +284,23 @@ const T = {
     "dl.android.s5": "<strong>Aggiorna</strong> — ripeti i passi 2–3 con il nuovo APK; Android aggiornerà l'installazione esistente.",
     "dl.android.cmd.label": "Download",
     "dl.android.warning": "Questo APK è firmato con una chiave di debug e non è distribuito tramite il Play Store. Devi abilitare <em>Installa app sconosciute</em> prima di installarlo.",
+
+    // Download page — how to install (compact steps)
+    "dl.how.title":       "Come installare",
+    "dl.how.macos.1":     "Scegli DMG o Homebrew.",
+    "dl.how.macos.2":     "DMG — apri il file scaricato e trascina RuntimeX nella cartella Applicazioni.",
+    "dl.how.macos.3":     "Homebrew — copia il comando, incollalo nel Terminale e premi Invio.",
+    "dl.how.macos.4":     "Bloccato da Gatekeeper? Vai in Impostazioni di Sistema → Privacy e Sicurezza → Apri comunque.",
+    "dl.how.windows.1":   "Scarica e avvia l'installer.",
+    "dl.how.windows.2":   "SmartScreen potrebbe apparire — clicca <em>Ulteriori informazioni → Esegui comunque</em>.",
+    "dl.how.windows.3":   "Segui il wizard. Trovi RuntimeX nel menu Start al termine.",
+    "dl.how.linux.1":     "Scarica il tarball.",
+    "dl.how.linux.2":     "Estrai: <code>tar -xzf RuntimeX-linux.tar.gz -C ~/.local/share/runtimex</code>",
+    "dl.how.linux.3":     "Avvia: <code>~/.local/share/runtimex/runtimex</code>",
+    "dl.how.android.1":   "Abilita sorgenti sconosciute — <em>Impostazioni → App → Accesso speciale → Installa app sconosciute</em>.",
+    "dl.how.android.2":   "Scarica l'APK sul tuo dispositivo.",
+    "dl.how.android.3":   "Tocca il file scaricato e conferma l'installazione.",
+    "dl.how.android.4":   "Per aggiornare, ripeti i passi 2–3 con il nuovo APK.",
 
     // Support page
     "support.title": "Supporto",
