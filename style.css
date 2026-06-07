@@ -1093,4 +1093,11 @@ body {
   .faq-item { padding: 14px 0; }
   .faq-q { font-size: 0.9rem; }
   .faq-a { font-size: 0.85rem; }
+
+  /* Download page */
+  .download-hero { padding-top: 48px; padding-bottom: 0; }
+  .download-hero-inner { padding-top: 40px; padding-bottom: 36px; }
+  .download-hero .hero-actions { flex-direction: column; margin-bottom: 28px; }
+  .download-hero .hero-actions .btn-lg { width: 100%; justify-content: center; }
+  .download-hero .platforms-nav { padding-top: 20px; gap: 8px; }
 }
