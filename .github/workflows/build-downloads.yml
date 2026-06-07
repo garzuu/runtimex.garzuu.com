@@ -62,14 +62,22 @@ jobs:
         run: flutter pub get
         working-directory: source
 
+      - name: Inject app icon into asset catalog
+        run: |
+          ICONSET_DIR=$(mktemp -d)
+          iconutil --convert iconset "$GITHUB_WORKSPACE/assets/AppIcon.icns" --output "$ICONSET_DIR"
+          APPICONSET="source/macos/Runner/Assets.xcassets/AppIcon.appiconset"
+          sips -z 16 16     "$ICONSET_DIR/icon_16x16.png"    --out "$APPICONSET/app_icon_16.png"
+          sips -z 32 32     "$ICONSET_DIR/icon_16x16@2x.png" --out "$APPICONSET/app_icon_32.png"
+          sips -z 64 64     "$ICONSET_DIR/icon_32x32@2x.png" --out "$APPICONSET/app_icon_64.png"
+          sips -z 128 128   "$ICONSET_DIR/icon_128x128.png"  --out "$APPICONSET/app_icon_128.png"
+          sips -z 256 256   "$ICONSET_DIR/icon_128x128@2x.png" --out "$APPICONSET/app_icon_256.png"
+          sips -z 512 512   "$ICONSET_DIR/icon_256x256@2x.png" --out "$APPICONSET/app_icon_512.png"
+          sips -z 1024 1024 "$ICONSET_DIR/icon_512x512@2x.png" --out "$APPICONSET/app_icon_1024.png"
+
       - name: Build app bundle
         run: flutter build macos --release
         working-directory: source
-
-      - name: Inject app icon
-        run: |
-          cp "$GITHUB_WORKSPACE/assets/AppIcon.icns" \
-            source/build/macos/Build/Products/Release/runtimex.app/Contents/Resources/AppIcon.icns
 
       - name: Sign app bundle
         run: |
