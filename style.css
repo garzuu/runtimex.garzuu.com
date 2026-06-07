@@ -568,25 +568,34 @@ body {
   margin-bottom: 36px;
 }
 
-.download-actions { display: flex; justify-content: center; gap: 12px; }
+.dl-cta-primary { margin-bottom: 20px; }
 
-.download-checks {
+.dl-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dl-cta-links {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-top: 18px;
+  align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
-.download-checks a {
-  font-size: 0.86rem;
+.dl-cta-links a {
+  font-size: 0.85rem;
   color: var(--text-muted);
   text-decoration: none;
-  font-family: var(--mono);
+  transition: color 0.15s;
 }
 
-.download-checks a:hover {
-  color: var(--accent);
+.dl-cta-links a:hover { color: var(--text); }
+
+.dl-cta-sep {
+  color: var(--text-faint);
+  font-size: 0.85rem;
 }
 
 /* ── Footer ───────────────────────────────────────────────────── */

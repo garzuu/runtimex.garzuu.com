@@ -293,12 +293,19 @@
   <section class="section section--dark" id="download">
     <div class="container download-section">
       <h2 data-i18n="dl.cta.title">Ready to download RuntimeX?</h2>
-      <p data-i18n="dl.cta.sub">Get the macOS DMG or Windows EXE directly from this site.</p>
-      <div class="download-actions">
-        <a href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg" class="btn btn-primary btn-lg" data-i18n="dl.cta.dmg">Download DMG</a>
-        <a href="/downloads/RuntimeX-windows.exe" download="RuntimeX-windows.exe" class="btn btn-ghost btn-lg" data-i18n="dl.cta.exe">Download EXE</a>
-        <a href="download.html" class="btn btn-ghost btn-lg" data-i18n="dl.cta.page">Download page</a>
-        <a href="https://github.com/garzuu/homebrew-runtimex" class="btn btn-ghost btn-lg" data-i18n="dl.cta.brew">Homebrew tap</a>
+      <p data-i18n="dl.cta.sub">Available for macOS, Windows, Linux and Android. No account, no backend.</p>
+      <div class="dl-cta-primary">
+        <a id="dl-cta-btn" href="/downloads/RuntimeX-macos.dmg" download="RuntimeX-macos.dmg" class="btn btn-primary btn-lg dl-cta-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="flex-shrink:0">
+            <path d="M12 3v13M7 11l5 5 5-5M4 20h16"/>
+          </svg>
+          <span id="dl-cta-label">macOS</span>
+        </a>
+      </div>
+      <div class="dl-cta-links">
+        <a href="download.html" data-i18n="dl.cta.page">All platforms</a>
+        <span class="dl-cta-sep" aria-hidden="true">·</span>
+        <a href="https://github.com/garzuu/homebrew-runtimex" target="_blank" rel="noopener noreferrer" data-i18n="dl.cta.brew">Homebrew tap</a>
       </div>
     </div>
   </section>
@@ -320,5 +327,24 @@
 
   <script src="app.js"></script>
   <script src="i18n.js"></script>
+  <script>
+    (function () {
+      try {
+        const ua = navigator.userAgent;
+        let href, dl, label;
+        if      (/iPhone|iPad|iPod/.test(ua)) { href = 'download.html';                   dl = null;                      label = 'iOS'; }
+        else if (/Android/.test(ua))          { href = '/downloads/RuntimeX-android.apk'; dl = 'RuntimeX-android.apk';   label = 'Android'; }
+        else if (/Win/.test(ua))              { href = '/downloads/RuntimeX-windows.exe';  dl = 'RuntimeX-windows.exe';  label = 'Windows'; }
+        else if (/Linux/.test(ua))            { href = '/downloads/RuntimeX-linux.tar.gz'; dl = 'RuntimeX-linux.tar.gz'; label = 'Linux'; }
+        else                                  { href = '/downloads/RuntimeX-macos.dmg';    dl = 'RuntimeX-macos.dmg';    label = 'macOS'; }
+        const btn = document.getElementById('dl-cta-btn');
+        const lbl = document.getElementById('dl-cta-label');
+        if (!btn || !lbl) return;
+        btn.href = href;
+        lbl.textContent = label;
+        if (dl) btn.setAttribute('download', dl); else btn.removeAttribute('download');
+      } catch (_) {}
+    })();
+  </script>
 </body>
 </html>

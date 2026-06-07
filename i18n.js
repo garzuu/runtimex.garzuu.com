@@ -63,7 +63,7 @@ const T = {
 
     // Index — download CTA
     "dl.cta.title": "Ready to download RuntimeX?",
-    "dl.cta.sub":   "Get the macOS DMG or Windows EXE directly from this site.",
+    "dl.cta.sub":   "Available for macOS, Windows, Linux and Android. No account, no backend.",
     "dl.cta.dmg":   "Download DMG",
     "dl.cta.exe":   "Download EXE",
     "dl.cta.page":  "Download page",
@@ -226,7 +226,7 @@ const T = {
 
     // Index — download CTA
     "dl.cta.title": "Pronto a scaricare RuntimeX?",
-    "dl.cta.sub":   "Ottieni il DMG per macOS o il file EXE per Windows direttamente da questo sito.",
+    "dl.cta.sub":   "Disponibile per macOS, Windows, Linux e Android. Nessun account, nessun backend.",
     "dl.cta.dmg":   "Scarica DMG",
     "dl.cta.exe":   "Scarica EXE",
     "dl.cta.page":  "Pagina download",
