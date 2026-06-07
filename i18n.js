@@ -89,6 +89,11 @@ const T = {
     "dl.macos.s5": "<strong>Eject the DMG</strong> — right-click the mounted volume in Finder and eject it.",
     "dl.dl.label": "Download",
     "dl.sha.label": "SHA256 checksum",
+    "dl.comingSoon": "coming soon",
+
+    // Download page — iOS
+    "dl.how.ios.1": "RuntimeX is being submitted to the App Store.",
+    "dl.how.ios.2": "Check back soon — it will be available directly from the App Store with no extra setup.",
 
     // Download page — Homebrew
     "dl.brew.badge": "macOS · Terminal",
@@ -247,6 +252,11 @@ const T = {
     "dl.macos.s5": "<strong>Espelli il DMG</strong> — tasto destro sul volume montato nel Finder ed espelli.",
     "dl.dl.label": "Download",
     "dl.sha.label": "Checksum SHA256",
+    "dl.comingSoon": "presto disponibile",
+
+    // Download page — iOS
+    "dl.how.ios.1": "RuntimeX è in fase di pubblicazione sull'App Store.",
+    "dl.how.ios.2": "Torna presto — sarà disponibile direttamente dall'App Store senza configurazioni aggiuntive.",
 
     // Download page — Homebrew
     "dl.brew.badge": "macOS · Terminale",

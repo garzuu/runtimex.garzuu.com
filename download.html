@@ -156,6 +156,22 @@
     .dl-copy-btn:hover { color: var(--text-muted); }
     .dl-copy-btn.copied { color: var(--accent); }
 
+    /* Coming soon card variant */
+    .dl-card-soon {
+      opacity: 0.55;
+      cursor: default;
+      pointer-events: none;
+    }
+    .dl-card-soon:hover { border-color: var(--border-card); }
+    .dl-badge-soon {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-faint);
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+
     .dl-sha {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -243,10 +259,11 @@
 
         <!-- Platform tabs -->
         <div class="dl-tabs" role="tablist">
-          <button class="dl-tab active" data-tab="macos" role="tab" aria-selected="true">macOS</button>
-          <button class="dl-tab" data-tab="windows" role="tab" aria-selected="false">Windows</button>
-          <button class="dl-tab" data-tab="linux" role="tab" aria-selected="false">Linux</button>
-          <button class="dl-tab" data-tab="android" role="tab" aria-selected="false">Android</button>
+          <button class="dl-tab active" data-tab="macos"   role="tab" aria-selected="true">macOS</button>
+          <button class="dl-tab"        data-tab="windows" role="tab" aria-selected="false">Windows</button>
+          <button class="dl-tab"        data-tab="ios"     role="tab" aria-selected="false">iOS</button>
+          <button class="dl-tab"        data-tab="android" role="tab" aria-selected="false">Android</button>
+          <button class="dl-tab"        data-tab="linux"   role="tab" aria-selected="false">Linux</button>
         </div>
 
         <!-- macOS panel -->
@@ -302,6 +319,58 @@
           <a class="dl-sha" href="/downloads/RuntimeX-windows.exe.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
         </div>
 
+        <!-- iOS panel -->
+        <div class="dl-cards" id="panel-ios" hidden>
+          <div class="dl-card dl-card-soon">
+            <div class="dl-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+            </div>
+            <div class="dl-card-body">
+              <span class="dl-card-name">App Store</span>
+              <span class="dl-card-sub">iOS</span>
+            </div>
+            <div class="dl-card-action">
+              <span class="dl-badge-soon" data-i18n="dl.comingSoon">coming soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android panel -->
+        <div class="dl-cards" id="panel-android" hidden>
+          <a class="dl-card" href="/downloads/RuntimeX-android.apk" download="RuntimeX-android.apk">
+            <div class="dl-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 16V8a7 7 0 0 1 14 0v8"/><path d="M3 16h18"/><path d="M7 16v3a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="dl-card-body">
+              <span class="dl-card-name">Android</span>
+              <span class="dl-card-sub">.apk · arm64</span>
+            </div>
+            <div class="dl-card-action">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
+            </div>
+          </a>
+          <div class="dl-card dl-card-soon">
+            <div class="dl-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.18 23.76a2 2 0 0 0 2.18-.18l12.76-7.37-2.82-2.82-12.12 10.37zm-1.18-21.5v19.48l10.93-9.74L2 2.26zM20.49 10.7L17.3 8.87 14.2 12l3.12 3.12 3.2-1.85a2 2 0 0 0 0-3.57zM5.36.42a2 2 0 0 0-2.18-.18L14.2 12 17.3 8.87 5.36.42z"/>
+              </svg>
+            </div>
+            <div class="dl-card-body">
+              <span class="dl-card-name">Google Play</span>
+              <span class="dl-card-sub">Android</span>
+            </div>
+            <div class="dl-card-action">
+              <span class="dl-badge-soon" data-i18n="dl.comingSoon">coming soon</span>
+            </div>
+          </div>
+          <a class="dl-sha" href="/downloads/RuntimeX-android.apk.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
+          <div class="dl-warning" data-i18n-html="dl.android.warning">This APK is signed with a debug key and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.</div>
+        </div>
+
         <!-- Linux panel -->
         <div class="dl-cards" id="panel-linux" hidden>
           <a class="dl-card" href="/downloads/RuntimeX-linux.tar.gz" download="RuntimeX-linux.tar.gz">
@@ -333,27 +402,35 @@
               <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" hidden><path d="M20 6L9 17l-5-5"/></svg>
             </button>
           </div>
-          <a class="dl-sha" href="/downloads/RuntimeX-linux.tar.gz.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
-        </div>
-
-        <!-- Android panel -->
-        <div class="dl-cards" id="panel-android" hidden>
-          <a class="dl-card" href="/downloads/RuntimeX-android.apk" download="RuntimeX-android.apk">
+          <div class="dl-card dl-card-soon">
             <div class="dl-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M5 16V8a7 7 0 0 1 14 0v8"/><path d="M3 16h18"/><path d="M7 16v3a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/>
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6M12 9v6"/>
               </svg>
             </div>
             <div class="dl-card-body">
-              <span class="dl-card-name">Android</span>
-              <span class="dl-card-sub">.apk · arm64</span>
+              <span class="dl-card-name">AppImage</span>
+              <span class="dl-card-sub">.AppImage</span>
             </div>
             <div class="dl-card-action">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
+              <span class="dl-badge-soon" data-i18n="dl.comingSoon">coming soon</span>
             </div>
-          </a>
-          <a class="dl-sha" href="/downloads/RuntimeX-android.apk.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
-          <div class="dl-warning" data-i18n-html="dl.android.warning">This APK is signed with a debug key and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.</div>
+          </div>
+          <div class="dl-card dl-card-soon">
+            <div class="dl-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </div>
+            <div class="dl-card-body">
+              <span class="dl-card-name">DEB</span>
+              <span class="dl-card-sub">.deb</span>
+            </div>
+            <div class="dl-card-action">
+              <span class="dl-badge-soon" data-i18n="dl.comingSoon">coming soon</span>
+            </div>
+          </div>
+          <a class="dl-sha" href="/downloads/RuntimeX-linux.tar.gz.sha256" data-i18n="dl.sha.label">SHA256 checksum</a>
         </div>
 
         <!-- HOW TO INSTALL -->
@@ -376,10 +453,9 @@
             <li><span class="dl-step-num">03</span><span class="dl-step-text" data-i18n="dl.how.windows.3">Follow the wizard. Find RuntimeX in the Start menu when done.</span></li>
           </ol>
 
-          <ol class="dl-steps" id="steps-linux" hidden>
-            <li><span class="dl-step-num">01</span><span class="dl-step-text" data-i18n="dl.how.linux.1">Download the tarball.</span></li>
-            <li><span class="dl-step-num">02</span><span class="dl-step-text" data-i18n-html="dl.how.linux.2">Extract: <code>tar -xzf RuntimeX-linux.tar.gz -C ~/.local/share/runtimex</code></span></li>
-            <li><span class="dl-step-num">03</span><span class="dl-step-text" data-i18n-html="dl.how.linux.3">Run: <code>~/.local/share/runtimex/runtimex</code></span></li>
+          <ol class="dl-steps" id="steps-ios" hidden>
+            <li><span class="dl-step-num">01</span><span class="dl-step-text" data-i18n="dl.how.ios.1">RuntimeX is being submitted to the App Store.</span></li>
+            <li><span class="dl-step-num">02</span><span class="dl-step-text" data-i18n="dl.how.ios.2">Check back soon — it will be available directly from the App Store with no extra setup.</span></li>
           </ol>
 
           <ol class="dl-steps" id="steps-android" hidden>
@@ -387,6 +463,12 @@
             <li><span class="dl-step-num">02</span><span class="dl-step-text" data-i18n="dl.how.android.2">Download the APK on your device.</span></li>
             <li><span class="dl-step-num">03</span><span class="dl-step-text" data-i18n="dl.how.android.3">Tap the downloaded file and confirm the install.</span></li>
             <li><span class="dl-step-num">04</span><span class="dl-step-text" data-i18n="dl.how.android.4">To update, repeat steps 2–3 with the new APK.</span></li>
+          </ol>
+
+          <ol class="dl-steps" id="steps-linux" hidden>
+            <li><span class="dl-step-num">01</span><span class="dl-step-text" data-i18n="dl.how.linux.1">Download the tarball.</span></li>
+            <li><span class="dl-step-num">02</span><span class="dl-step-text" data-i18n-html="dl.how.linux.2">Extract: <code>tar -xzf RuntimeX-linux.tar.gz -C ~/.local/share/runtimex</code></span></li>
+            <li><span class="dl-step-num">03</span><span class="dl-step-text" data-i18n-html="dl.how.linux.3">Run: <code>~/.local/share/runtimex/runtimex</code></span></li>
           </ol>
         </div>
 
@@ -411,20 +493,39 @@
   <script src="app.js"></script>
   <script src="i18n.js"></script>
   <script>
+    // Platform auto-detection
+    function detectPlatform() {
+      try {
+        const ua = navigator.userAgent;
+        if (/iPhone|iPad|iPod/.test(ua)) return "ios";
+        if (/Android/.test(ua)) return "android";
+        if (/Win/.test(ua)) return "windows";
+        if (/Linux/.test(ua)) return "linux";
+      } catch (_) {}
+      return "macos";
+    }
+
     // Tab switching
     const tabs = document.querySelectorAll('.dl-tab');
+
+    function activateTab(platform) {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      const tab = document.querySelector('.dl-tab[data-tab="' + platform + '"]');
+      if (tab) { tab.classList.add('active'); tab.setAttribute('aria-selected', 'true'); }
+      document.querySelectorAll('.dl-cards').forEach(p => { p.hidden = true; });
+      const panel = document.getElementById('panel-' + platform);
+      if (panel) panel.hidden = false;
+      document.querySelectorAll('.dl-steps').forEach(s => { s.hidden = true; });
+      const steps = document.getElementById('steps-' + platform);
+      if (steps) steps.hidden = false;
+    }
+
     tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const platform = tab.dataset.tab;
-        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        document.querySelectorAll('.dl-cards').forEach(p => { p.hidden = true; });
-        document.getElementById('panel-' + platform).hidden = false;
-        document.querySelectorAll('.dl-steps').forEach(s => { s.hidden = true; });
-        document.getElementById('steps-' + platform).hidden = false;
-      });
+      tab.addEventListener('click', () => activateTab(tab.dataset.tab));
     });
+
+    // Auto-select detected platform on load
+    activateTab(detectPlatform());
 
     // Copy to clipboard
     document.querySelectorAll('.dl-copy-btn').forEach(btn => {
