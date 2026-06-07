@@ -1,0 +1,13 @@
+.assetsignore
+.git
+.claude
+.github
+.wrangler
+README.md
+LICENSE
+LICENSE-APACHE
+AGENTS.md
+wrangler.jsonc
+.gitignore
+/docs
+*.log
