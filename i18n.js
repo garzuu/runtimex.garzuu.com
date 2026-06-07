@@ -50,8 +50,8 @@ const T = {
     "algo.vpm.hint":   "0 (aggressive) → 5 (conservative)",
 
     // Index — platforms
-    "platforms.title": "iOS & Android.",
-    "platforms.sub":   "Plan from your phone at the dive site. Works on any device, fully offline.",
+    "platforms.title": "macOS, Windows, Linux, iOS & Android.",
+    "platforms.sub":   "One app, every platform. Plan on desktop, dive with your phone — everything stays offline.",
 
     // Index — offline banner
     "offline.title": "100% Offline. Always.",
@@ -213,8 +213,8 @@ const T = {
     "algo.vpm.hint":   "0 (aggressivo) → 5 (conservativo)",
 
     // Index — platforms
-    "platforms.title": "iOS & Android.",
-    "platforms.sub":   "Pianifica dal telefono sul posto di immersione. Funziona su qualsiasi dispositivo, completamente offline.",
+    "platforms.title": "macOS, Windows, Linux, iOS e Android.",
+    "platforms.sub":   "Un'app, ogni piattaforma. Pianifica sul desktop, immergiti con lo smartphone — tutto offline.",
 
     // Index — offline banner
     "offline.title": "100% Offline. Sempre.",
