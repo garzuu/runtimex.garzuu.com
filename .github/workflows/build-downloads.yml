@@ -66,6 +66,11 @@ jobs:
         run: flutter build macos --release
         working-directory: source
 
+      - name: Inject app icon
+        run: |
+          cp "$GITHUB_WORKSPACE/assets/AppIcon.icns" \
+            source/build/macos/Build/Products/Release/runtimex.app/Contents/Resources/AppIcon.icns
+
       - name: Sign app bundle
         run: |
           IDENTITY=$(security find-identity -v -p codesigning "$RUNNER_TEMP/build.keychain" \
