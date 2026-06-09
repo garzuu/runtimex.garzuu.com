@@ -127,7 +127,9 @@ jobs:
         run: xcrun stapler staple dist/RuntimeX-macos.dmg
 
       - name: Create DMG checksum
-        run: shasum -a 256 dist/RuntimeX-macos.dmg > dist/RuntimeX-macos.dmg.sha256
+        run: |
+          cd dist
+          shasum -a 256 RuntimeX-macos.dmg > RuntimeX-macos.dmg.sha256
 
       - uses: actions/upload-artifact@v4
         with:
@@ -207,8 +209,8 @@ jobs:
         shell: pwsh
         run: |
           Get-FileHash -Algorithm SHA256 dist\RuntimeX-windows.exe |
-            ForEach-Object { "$($_.Hash.ToLower())  dist\RuntimeX-windows.exe" } |
-            Set-Content dist\RuntimeX-windows.exe.sha256
+            ForEach-Object { "$($_.Hash.ToLower())  RuntimeX-windows.exe" } |
+            Set-Content -NoNewline dist\RuntimeX-windows.exe.sha256
 
       - uses: actions/upload-artifact@v4
         with:
@@ -253,7 +255,11 @@ jobs:
         run: |
           mkdir -p dist
           cp source/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk dist/RuntimeX-android.apk
-          shasum -a 256 dist/RuntimeX-android.apk > dist/RuntimeX-android.apk.sha256
+
+      - name: Create APK checksum
+        run: |
+          cd dist
+          shasum -a 256 RuntimeX-android.apk > RuntimeX-android.apk.sha256
 
       - uses: actions/upload-artifact@v4
         with:
@@ -301,7 +307,11 @@ jobs:
           mkdir -p dist
           tar -czf dist/RuntimeX-linux.tar.gz \
             -C source/build/linux/x64/release/bundle .
-          shasum -a 256 dist/RuntimeX-linux.tar.gz > dist/RuntimeX-linux.tar.gz.sha256
+
+      - name: Create tarball checksum
+        run: |
+          cd dist
+          shasum -a 256 RuntimeX-linux.tar.gz > RuntimeX-linux.tar.gz.sha256
 
       - uses: actions/upload-artifact@v4
         with:
@@ -375,11 +385,26 @@ jobs:
           TAP_TOKEN: ${{ secrets.RUNTIMEX_SOURCE_TOKEN }}
           VERSION: ${{ inputs.version }}
         run: |
+          set -euo pipefail
+
+          retry() {
+            local attempts="$1"
+            shift
+            local n=1
+            until "$@"; do
+              if [ "$n" -ge "$attempts" ]; then
+                return 1
+              fi
+              sleep $((n * 10))
+              n=$((n + 1))
+            done
+          }
+
           SHA256=$(cut -d' ' -f1 downloads/RuntimeX-macos.dmg.sha256)
-          git clone "https://x-access-token:${TAP_TOKEN}@github.com/garzuu/homebrew-runtimex.git" tap
-          sed -i "s/version \".*\"/version \"${VERSION}\"/" tap/Casks/runtimex.rb
-          sed -i "s/sha256 \".*\"/sha256 \"${SHA256}\"/" tap/Casks/runtimex.rb
+          retry 3 git clone "https://x-access-token:${TAP_TOKEN}@github.com/garzuu/homebrew-runtimex.git" tap
           cd tap
+          sed -i "s/version \".*\"/version \"${VERSION}\"/" Casks/runtimex.rb
+          sed -i "s/sha256 \".*\"/sha256 \"${SHA256}\"/" Casks/runtimex.rb
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Casks/runtimex.rb
@@ -388,4 +413,10 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update runtimex cask to v${VERSION}"
-          git push
+          LOCAL_SHA=$(git rev-parse HEAD)
+          retry 3 git push origin HEAD:main
+          REMOTE_SHA=$(git ls-remote origin refs/heads/main | awk '{print $1}')
+          if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
+            echo "Homebrew tap sync verification failed: remote main is $REMOTE_SHA, expected $LOCAL_SHA"
+            exit 1
+          fi

@@ -128,9 +128,9 @@ const T = {
     "dl.android.s2": "<strong>Download the APK</strong> from the button on the right, directly on your Android device.",
     "dl.android.s3": "<strong>Open the APK</strong> — tap the downloaded file in your notifications or Files app and confirm the install prompt.",
     "dl.android.s4": "<strong>Launch</strong> — find RuntimeX in your app drawer.",
-    "dl.android.s5": "<strong>Update</strong> — repeat steps 2–3 with the new APK; Android will update the existing install in place.",
+    "dl.android.s5": "<strong>Update</strong> — install the new APK; if Android blocks it, uninstall the previous version first.",
     "dl.android.cmd.label": "Download",
-    "dl.android.warning": "This APK is signed with a debug key and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.",
+    "dl.android.warning": "This APK is sideloaded from CI and is not distributed via the Play Store. You must enable <em>Install unknown apps</em> before installing.",
 
     // Download page — how to install (compact steps)
     "dl.how.title":       "How to install",
@@ -148,7 +148,7 @@ const T = {
     "dl.how.android.1":   "Enable unknown sources — <em>Settings → Apps → Special app access → Install unknown apps</em>.",
     "dl.how.android.2":   "Download the APK on your device.",
     "dl.how.android.3":   "Tap the downloaded file and confirm the install.",
-    "dl.how.android.4":   "To update, repeat steps 2–3 with the new APK.",
+    "dl.how.android.4":   "To update, install the new APK; if Android blocks it, uninstall the previous version first.",
 
     // Support page
     "support.title": "Support",
@@ -292,9 +292,9 @@ const T = {
     "dl.android.s2": "<strong>Scarica l'APK</strong> usando il pulsante a destra, direttamente sul tuo dispositivo Android.",
     "dl.android.s3": "<strong>Apri l'APK</strong> — tocca il file scaricato nelle notifiche o nell'app File e conferma l'installazione.",
     "dl.android.s4": "<strong>Avvia</strong> — trova RuntimeX nel cassetto delle app.",
-    "dl.android.s5": "<strong>Aggiorna</strong> — ripeti i passi 2–3 con il nuovo APK; Android aggiornerà l'installazione esistente.",
+    "dl.android.s5": "<strong>Aggiorna</strong> — installa il nuovo APK; se Android lo blocca, disinstalla prima la versione precedente.",
     "dl.android.cmd.label": "Download",
-    "dl.android.warning": "Questo APK è firmato con una chiave di debug e non è distribuito tramite il Play Store. Devi abilitare <em>Installa app sconosciute</em> prima di installarlo.",
+    "dl.android.warning": "Questo APK viene distribuito via CI e non tramite il Play Store. Devi abilitare <em>Installa app sconosciute</em> prima di installarlo.",
 
     // Download page — how to install (compact steps)
     "dl.how.title":       "Come installare",
@@ -312,7 +312,7 @@ const T = {
     "dl.how.android.1":   "Abilita sorgenti sconosciute — <em>Impostazioni → App → Accesso speciale → Installa app sconosciute</em>.",
     "dl.how.android.2":   "Scarica l'APK sul tuo dispositivo.",
     "dl.how.android.3":   "Tocca il file scaricato e conferma l'installazione.",
-    "dl.how.android.4":   "Per aggiornare, ripeti i passi 2–3 con il nuovo APK.",
+    "dl.how.android.4":   "Per aggiornare, installa il nuovo APK; se Android lo blocca, disinstalla prima la versione precedente.",
 
     // Support page
     "support.title": "Supporto",
