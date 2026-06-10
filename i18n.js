@@ -92,8 +92,9 @@ const T = {
     "dl.comingSoon": "coming soon",
 
     // Download page — iOS
-    "dl.how.ios.1": "RuntimeX is being submitted to the App Store.",
-    "dl.how.ios.2": "Check back soon — it will be available directly from the App Store with no extra setup.",
+    "dl.appStore.label": "Open App Store",
+    "dl.how.ios.1": "RuntimeX is now available on the App Store.",
+    "dl.how.ios.2": "Open it in the App Store and install it with no extra setup.",
 
     // Download page — Homebrew
     "dl.brew.badge": "macOS · Terminal",
@@ -256,8 +257,9 @@ const T = {
     "dl.comingSoon": "presto disponibile",
 
     // Download page — iOS
-    "dl.how.ios.1": "RuntimeX è in fase di pubblicazione sull'App Store.",
-    "dl.how.ios.2": "Torna presto — sarà disponibile direttamente dall'App Store senza configurazioni aggiuntive.",
+    "dl.appStore.label": "Apri App Store",
+    "dl.how.ios.1": "RuntimeX è ora disponibile su App Store.",
+    "dl.how.ios.2": "Aprilo dall'App Store e installalo senza configurazioni aggiuntive.",
 
     // Download page — Homebrew
     "dl.brew.badge": "macOS · Terminale",
