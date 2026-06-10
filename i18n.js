@@ -53,6 +53,14 @@ const T = {
     "platforms.title": "macOS, Windows, Linux, iOS & Android.",
     "platforms.sub":   "One app, every platform. Plan on desktop, dive with your phone — everything stays offline.",
 
+    // Index — screenshots
+    "screens.title":    "See it in action.<br><span class=\"accent\">On your phone.</span>",
+    "screens.sub":      "Clean interface, dark-first design. Everything you need, nothing you don't.",
+    "screens.cap1":     "Planner inputs",
+    "screens.cap2":     "Profile chart & gas",
+    "screens.cap3":     "Lost gas scenarios",
+    "screens.appstore": "Download on the App Store",
+
     // Index — offline banner
     "offline.title": "100% Offline. Always.",
     "offline.desc":  "No Wi-Fi at the dive site? No problem. RuntimeX requires zero network connection — plans are computed and saved entirely on your device. Your data never leaves your hands.",
@@ -63,7 +71,7 @@ const T = {
 
     // Index — download CTA
     "dl.cta.title": "Ready to download RuntimeX?",
-    "dl.cta.sub":   "Available for macOS, Windows, Linux and Android. No account, no backend.",
+    "dl.cta.sub":   "Available for macOS, Windows, Linux, iOS and Android. No account, no backend.",
     "dl.cta.dmg":   "Download DMG",
     "dl.cta.exe":   "Download EXE",
     "dl.cta.page":  "Download page",
@@ -72,8 +80,8 @@ const T = {
     // Download page — hero
     "dl.hero.badge": "v1.0.1 · all platforms",
     "dl.hero.title": "Download <span class=\"accent\">RuntimeX</span>",
-    "dl.hero.sub":   "Offline-first technical dive planner. Available for macOS, Windows, Linux and Android. No account, no backend — everything runs on your device.",
-    "dl.meta.platforms": "macOS · Windows · Linux · Android",
+    "dl.hero.sub":   "Offline-first technical dive planner. Available for macOS, Windows, Linux, iOS and Android. No account, no backend — everything runs on your device.",
+    "dl.meta.platforms": "macOS · Windows · Linux · iOS · Android",
     "dl.meta.privacy":   "No account, no backend",
     "dl.meta.source":    "CI-built from private repo",
     "dl.meta.label.platforms": "Platforms",
@@ -218,6 +226,14 @@ const T = {
     "platforms.title": "macOS, Windows, Linux, iOS e Android.",
     "platforms.sub":   "Un'app, ogni piattaforma. Pianifica sul desktop, immergiti con lo smartphone — tutto offline.",
 
+    // Index — screenshots
+    "screens.title":    "Vedi l'app in azione.<br><span class=\"accent\">Sul tuo iPhone.</span>",
+    "screens.sub":      "Interfaccia pulita, design dark-first. Tutto quello che serve, niente di superfluo.",
+    "screens.cap1":     "Parametri di pianificazione",
+    "screens.cap2":     "Profilo & gas",
+    "screens.cap3":     "Scenari gas perso",
+    "screens.appstore": "Scarica sull'App Store",
+
     // Index — offline banner
     "offline.title": "100% Offline. Sempre.",
     "offline.desc":  "Nessun Wi-Fi in barca? Nessun problema. RuntimeX non richiede alcuna connessione di rete — i piani vengono calcolati e salvati interamente sul tuo dispositivo. I tuoi dati non lasciano mai le tue mani.",
@@ -228,7 +244,7 @@ const T = {
 
     // Index — download CTA
     "dl.cta.title": "Pronto a scaricare RuntimeX?",
-    "dl.cta.sub":   "Disponibile per macOS, Windows, Linux e Android. Nessun account, nessun backend.",
+    "dl.cta.sub":   "Disponibile per macOS, Windows, Linux, iOS e Android. Nessun account, nessun backend.",
     "dl.cta.dmg":   "Scarica DMG",
     "dl.cta.exe":   "Scarica EXE",
     "dl.cta.page":  "Pagina download",
@@ -237,8 +253,8 @@ const T = {
     // Download page — hero
     "dl.hero.badge": "v1.0.1 · tutte le piattaforme",
     "dl.hero.title": "Scarica <span class=\"accent\">RuntimeX</span>",
-    "dl.hero.sub":   "Dive planner tecnico offline-first. Disponibile per macOS, Windows, Linux e Android. Nessun account, nessun backend — tutto gira sul tuo dispositivo.",
-    "dl.meta.platforms": "macOS · Windows · Linux · Android",
+    "dl.hero.sub":   "Dive planner tecnico offline-first. Disponibile per macOS, Windows, Linux, iOS e Android. Nessun account, nessun backend — tutto gira sul tuo dispositivo.",
+    "dl.meta.platforms": "macOS · Windows · Linux · iOS · Android",
     "dl.meta.privacy":   "Nessun account, nessun backend",
     "dl.meta.source":    "Build CI da repo privato",
     "dl.meta.label.platforms": "Piattaforme",
