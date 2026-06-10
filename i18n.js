@@ -92,7 +92,7 @@ const T = {
     "dl.comingSoon": "coming soon",
 
     // Download page — iOS
-    "dl.appStore.label": "Open App Store",
+    "dl.appStore.label": "Open the App Store",
     "dl.how.ios.1": "RuntimeX is now available on the App Store.",
     "dl.how.ios.2": "Open it in the App Store and install it with no extra setup.",
 
@@ -257,7 +257,7 @@ const T = {
     "dl.comingSoon": "presto disponibile",
 
     // Download page — iOS
-    "dl.appStore.label": "Apri App Store",
+    "dl.appStore.label": "Apri l'App Store",
     "dl.how.ios.1": "RuntimeX è ora disponibile su App Store.",
     "dl.how.ios.2": "Aprilo dall'App Store e installalo senza configurazioni aggiuntive.",
 
