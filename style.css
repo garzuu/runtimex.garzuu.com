@@ -598,6 +598,84 @@ body {
   font-size: 0.85rem;
 }
 
+/* ── Screenshots section ──────────────────────────────────────── */
+.screenshots-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.iphone-mockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transform: rotate(-4deg) translateY(12px);
+  transition: transform 0.3s ease;
+}
+.iphone-mockup:last-child { transform: rotate(4deg) translateY(12px); }
+.iphone-mockup--center {
+  transform: none;
+  z-index: 1;
+}
+.iphone-mockup:hover,
+.iphone-mockup:last-child:hover { transform: rotate(0deg) translateY(0); }
+.iphone-mockup--center:hover { transform: translateY(-8px); }
+
+.iphone-frame {
+  position: relative;
+  width: 180px;
+  border-radius: 32px;
+  border: 2px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+  background: #0a1628;
+  box-shadow:
+    0 0 0 1px rgba(0,212,255,0.08),
+    0 24px 64px rgba(0,0,0,0.6),
+    0 4px 16px rgba(0,212,255,0.08);
+}
+.iphone-mockup--center .iphone-frame {
+  width: 210px;
+  box-shadow:
+    0 0 0 1px rgba(0,212,255,0.15),
+    0 32px 80px rgba(0,0,0,0.7),
+    0 4px 24px rgba(0,212,255,0.15);
+}
+
+.iphone-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.iphone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 26px;
+  background: #07111f;
+  border-radius: 0 0 18px 18px;
+  z-index: 2;
+}
+
+.iphone-caption {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.screenshots-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
 /* ── Footer ───────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--border-card);
@@ -994,5 +1072,14 @@ body {
   .faq-item { padding: 14px 0; }
   .faq-q { font-size: 0.9rem; }
   .faq-a { font-size: 0.85rem; }
+
+  .screenshots-row {
+    gap: 12px;
+  }
+  .iphone-frame { width: 120px; border-radius: 22px; }
+  .iphone-mockup--center .iphone-frame { width: 140px; }
+  .iphone-notch { width: 60px; height: 20px; }
+  .iphone-mockup { transform: rotate(-3deg) translateY(8px); }
+  .iphone-mockup:last-child { transform: rotate(3deg) translateY(8px); }
 
 }
